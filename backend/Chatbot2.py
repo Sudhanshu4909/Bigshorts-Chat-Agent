@@ -2378,7 +2378,7 @@ class BigshortsChatbot:
                             # If we found text with the prompt
                             if "step-by-step guide" in prompt_text:
                                 # Find which content type was mentioned
-                                or content_type in ALLOWED_CONTENT_TYPES:
+                                for content_type in ALLOWED_CONTENT_TYPES:
                                     if content_type.upper() in prompt_text:
                                         response = content_creation_guide(content_type)
                                         self.sessions[session_id].append({"role": "assistant", "content": response})
