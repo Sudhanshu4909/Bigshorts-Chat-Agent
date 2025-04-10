@@ -2342,48 +2342,80 @@ class BigshortsChatbot:
 
         # Handle "yes" replies to suggestions about content creation
         if user_input.lower().strip() in ["yes", "yeah", "sure", "ok", "okay"]:
-            # Check previous assistant message for content-related suggestions
-            if len(self.sessions[session_id]) >= 2:
-                prev_message = self.sessions[session_id][-2]
-                if prev_message["role"] == "assistant":
-                    prev_content = prev_message["content"]
-            
-                    # Handle content_explanation_with_guide_prompt type
-                    if isinstance(prev_content, dict) and prev_content.get("type") == "content_explanation_with_guide_prompt":
-                        content_type = prev_content.get("content", {}).get("content_type")
-                        if content_type:
-                            response = content_creation_guide(content_type)
-                            self.sessions[session_id].append({"role": "assistant", "content": response})
-                            return response
-            
-                    # Handle suggestion type (for "It looks like you're interested in...")
-                    elif isinstance(prev_content, dict) and prev_content.get("type") == "suggestion":
-                        suggestion_text = prev_content.get("content", "")
-                        # Extract content type from suggestion text
-                        for content_type in ALLOWED_CONTENT_TYPES:
-                            if content_type.lower() in suggestion_text.lower():
+            try:
+                # Check previous assistant message for content-related suggestions
+                if len(self.sessions[session_id]) >= 2:
+                    prev_message = self.sessions[session_id][-2]
+                    if prev_message["role"] == "assistant":
+                        prev_content = prev_message["content"]
+                
+                        # For debugging
+                        print(f"DEBUG - Previous message content type: {type(prev_content)}")
+                        print(f"DEBUG - Previous message content: {prev_content}")
+                
+                        # Handle content_explanation_with_guide_prompt type
+                        if isinstance(prev_content, dict) and prev_content.get("type") == "content_explanation_with_guide_prompt":
+                            content_type = prev_content.get("content", {}).get("content_type")
+                            if content_type:
                                 response = content_creation_guide(content_type)
                                 self.sessions[session_id].append({"role": "assistant", "content": response})
                                 return response
-            
-                    # If no specific content type found but was related to content creation
-                    elif isinstance(prev_content, str) and any(ct.lower() in prev_content.lower() for ct in ALLOWED_CONTENT_TYPES):
-                        # Find the mentioned content type
-                        for content_type in ALLOWED_CONTENT_TYPES:
-                            if content_type.lower() in prev_content.lower():
-                                response = content_creation_guide(content_type)
-                                self.sessions[session_id].append({"role": "assistant", "content": response})
-                                return response
-            
-                    # Handle blue prompt messages (with "Would you like to see the step-by-step guide...")
-                    elif isinstance(prev_content, dict) and "Would you like to see the step-by-step guide for creating a" in str(prev_content):
-                        # Extract content type from the message
-                        for content_type in ALLOWED_CONTENT_TYPES:
-                            if content_type.upper() in str(prev_content):
-                                response = content_creation_guide(content_type)
-                                self.sessions[session_id].append({"role": "assistant", "content": response})
-                                return response
-
+                
+                        # Check for "Would you like to see the step-by-step guide" in any dict type
+                        elif isinstance(prev_content, dict):
+                            prompt_text = ""
+                    
+                            # Try to extract text from different possible formats
+                            if "content" in prev_content and isinstance(prev_content["content"], str):
+                                prompt_text = prev_content["content"]
+                            elif "content" in prev_content and isinstance(prev_content["content"], dict):
+                                # Extract from nested content objects
+                                for key, value in prev_content["content"].items():
+                                    if isinstance(value, str) and "step-by-step guide" in value:
+                                        prompt_text = value
+                                        break
+                    
+                            # If we found text with the prompt
+                            if "step-by-step guide" in prompt_text:
+                                # Find which content type was mentioned
+                                or content_type in ALLOWED_CONTENT_TYPES:
+                                    if content_type.upper() in prompt_text:
+                                        response = content_creation_guide(content_type)
+                                        self.sessions[session_id].append({"role": "assistant", "content": response})
+                                        return response
+                
+                        # Handle suggestion type
+                        elif isinstance(prev_content, dict) and prev_content.get("type") == "suggestion":
+                            suggestion_text = prev_content.get("content", "")
+                            # Extract content type from suggestion text
+                            for content_type in ALLOWED_CONTENT_TYPES:
+                                if content_type.lower() in suggestion_text.lower():
+                                    response = content_creation_guide(content_type)
+                                    self.sessions[session_id].append({"role": "assistant", "content": response})
+                                    return response
+                
+                        # String content with content type
+                        elif isinstance(prev_content, str):
+                            # Find the mentioned content type
+                            for content_type in ALLOWED_CONTENT_TYPES:
+                                if content_type.lower() in prev_content.lower() or content_type.upper() in prev_content:
+                                    response = content_creation_guide(content_type)
+                                    self.sessions[session_id].append({"role": "assistant", "content": response})
+                                    return response
+        
+                # If no specific content identified, provide a helpful response
+                response = {"type": "message", "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, FLIX, or any other Bigshorts feature."}
+                self.sessions[session_id].append({"role": "assistant", "content": response})
+                return response
+        
+            except Exception as e:
+                # Log the exception for debugging
+                print(f"Exception in 'yes' handler: {str(e)}")
+        
+                # Provide a fallback response
+                response = {"type": "message", "content": "I'd be happy to help with Bigshorts features! Could you please specify which content type you're interested in? For example, SHOT, SNIP, SSUP, FLIX, or Collab?"}
+                self.sessions[session_id].append({"role": "assistant", "content": response})
+                return response
 
         # Check for off-topic queries
         if self._is_off_topic(user_input):
