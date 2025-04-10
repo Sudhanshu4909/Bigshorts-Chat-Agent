@@ -2374,6 +2374,15 @@ class BigshortsChatbot:
                                 response = content_creation_guide(content_type)
                                 self.sessions[session_id].append({"role": "assistant", "content": response})
                                 return response
+            
+                    # Handle blue prompt messages (with "Would you like to see the step-by-step guide...")
+                    elif isinstance(prev_content, dict) and "Would you like to see the step-by-step guide for creating a" in str(prev_content):
+                        # Extract content type from the message
+                        for content_type in ALLOWED_CONTENT_TYPES:
+                            if content_type.upper() in str(prev_content):
+                                response = content_creation_guide(content_type)
+                                self.sessions[session_id].append({"role": "assistant", "content": response})
+                                return response
 
 
         # Check for off-topic queries
