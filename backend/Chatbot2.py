@@ -2070,7 +2070,7 @@ class BigshortsChatbot:
         ]
     
         return any(pattern in query_lower for pattern in user_search_patterns)
-    
+
     def generate_llm_response(self, query: str, session_id: str) -> str:
         """Generate a response using the local LLM for a specific session"""
         # Get system prompt
@@ -2165,7 +2165,58 @@ class BigshortsChatbot:
                 "How are things? 🛠 Whether you need help with Bigshorts creation or troubleshooting, I've got you covered!"
             ]
 
-            response = {"type": "message", "content": random.choice(greeting_responses)}
+            faqs = [
+                {
+                    "question": "How do I create a SHOT?",
+                    "content_type": "shot",
+                    "query": "How to create a shot"
+                },
+                {
+                    "question": "How do I create a SNIP?",
+                    "content_type": "snip",
+                    "query": "How to create a snip"
+                },
+                {
+                    "question": "How do I create a SSUP?",
+                    "content_type": "ssup",
+                    "query": "How to create a ssup"
+                },
+                {
+                    "question": "How do I make a Collab post?",
+                    "content_type": "collab",
+                    "query": "How to collaborate"
+                },
+                {
+                    "question": "How do I edit my profile?",
+                    "content_type": "edit profile",
+                    "query": "How to edit profile"
+                },
+                {
+                    "question": "How do I see my notifications?",
+                    "content_type": "notification",
+                    "query": "How to check notifications"
+                },
+                {
+                    "question": "How do I change the app theme?",
+                    "content_type": "change theme",
+                    "query": "How to change theme"
+                },
+                {
+                    "question": "How do I save a post?",
+                    "content_type": "saved posts",
+                    "query": "How to save posts"
+                }
+            ]
+    
+            # Combine greeting and FAQs
+            response = {
+            "type": "greeting_with_faqs", 
+                "content": {
+                    "greeting": random.choice(greeting_responses),
+                    "faqs": faqs
+                }
+            }
+    
             self.sessions[session_id].append({"role": "assistant", "content": response})
             return response
 
@@ -2263,6 +2314,28 @@ class BigshortsChatbot:
             }
             self.sessions[session_id].append({"role": "assistant", "content": generic_response})
             return generic_response
+
+        if user_input.startswith("FAQ:"):
+            # Extract the content type from the FAQ selection format "FAQ: content_type"
+            try:
+                selected_content_type = user_input.split("FAQ:")[1].strip()
+                
+                # If it's an issue, handle it as an issue
+                if any(issue_type in selected_content_type.lower() for issue_type in ALLOWED_ISSUE_TYPES):
+                    issue_type = next((issue for issue in ALLOWED_ISSUE_TYPES if issue in selected_content_type.lower()), None)
+                    if issue_type:
+                        response = {"type": "issue", "content": handle_common_issues(issue_type)}
+                        self.sessions[session_id].append({"role": "assistant", "content": response})
+                        return response
+                
+                # Otherwise treat it as a content guide request
+                response = content_creation_guide(selected_content_type)
+                self.sessions[session_id].append({"role": "assistant", "content": response})
+                return response
+            except Exception as e:
+                print(f"Error handling FAQ selection: {str(e)}")
+                # If something goes wrong, fallback to regular processing
+                pass
 
 
         def get_natural_content_phrasing(content_type: str) -> str:

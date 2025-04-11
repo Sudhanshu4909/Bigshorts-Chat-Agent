@@ -18,8 +18,8 @@ app = FastAPI(title="Bigshorts Chatbot API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000"
-        "http://bigshortsbot-fba2hdbpajcfa9d4.centralindia-01.azurewebsites.net",  # Local development
+        "http://localhost:3000",
+        "http://bigshortsbot-fba2hdbpajcfa9d4.centralindia-01.azurewebsites.net",
         "http://20.197.5.250",
         "http://52.140.106.225" # Be cautious with this in production
     ],
@@ -52,6 +52,11 @@ SESSION_TIMEOUT = 30
 # Request model
 class ChatRequest(BaseModel):
     content: str
+    session_id: Optional[str] = None
+
+# FAQ selection model
+class FAQSelectRequest(BaseModel):
+    content_type: str
     session_id: Optional[str] = None
 
 # Simplified response model without validation
@@ -113,6 +118,41 @@ async def chat(request: ChatRequest):
         print(f"Server error: {str(e)}")
         traceback.print_exc()
         return {"type": "error", "content": f"Server error: {str(e)}", "session_id": request.session_id or str(uuid.uuid4())}
+
+@app.post("/api/select-faq")
+async def select_faq(request: FAQSelectRequest):
+    """API endpoint to handle FAQ selection"""
+    try:
+        # Use provided session ID or generate a new one
+        session_id = request.session_id or str(uuid.uuid4())
+        
+        # Get or create chatbot for this session
+        chatbot = get_session_chatbot(session_id)
+        if chatbot is None:
+            return {"type": "error", "content": "Failed to initialize chatbot", "session_id": session_id}
+        
+        # Format the request as if the user had asked about this topic
+        formatted_request = f"FAQ: {request.content_type}"
+        
+        # Process the request
+        response = chatbot.process_query(formatted_request)
+        
+        # Update last access time
+        with chatbot_lock:
+            last_access[session_id] = datetime.now()
+        
+        # Add session_id to the response
+        if isinstance(response, dict):
+            response["session_id"] = session_id
+        else:
+            response = {"type": "message", "content": str(response), "session_id": session_id}
+            
+        return response
+        
+    except Exception as e:
+        print(f"Error selecting FAQ: {str(e)}")
+        traceback.print_exc()
+        return {"type": "error", "content": f"Error processing FAQ selection: {str(e)}", "session_id": request.session_id or str(uuid.uuid4())}
 
 def get_session_chatbot(session_id):
     """Get or create a chatbot instance for a session"""
