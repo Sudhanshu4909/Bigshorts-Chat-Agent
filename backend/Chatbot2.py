@@ -2194,12 +2194,12 @@ class BigshortsChatbot:
                 {
                     "question": "How to check notifications?",
                     "content_type": "Notification",
-                    "query": "How to check notifications"
+                    "query": "Notification"
                 },
                 {
                     "question": "How to change the app theme?",
                     "content_type": "Change theme",
-                    "query": "How to change theme"
+                    "query": "Theme"
                 },
                 {
                     "question": "How to create Interactive Content?",
