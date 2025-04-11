@@ -2192,14 +2192,14 @@ class BigshortsChatbot:
                     "query": "How to edit profile"
                 },
                 {
-                    "question": "How to check notifications?",
+                    "question": "How to check notification?",
                     "content_type": "Notification",
-                    "query": "Notification"
+                    "query": "How to check notification?"
                 },
                 {
-                    "question": "How to change the app theme?",
+                    "question": "How to change app theme?",
                     "content_type": "Change theme",
-                    "query": "Theme"
+                    "query": "How to change app theme?"
                 },
                 {
                     "question": "How to create Interactive Content?",
