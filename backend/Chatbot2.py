@@ -2192,19 +2192,19 @@ class BigshortsChatbot:
                     "query": "How to edit profile"
                 },
                 {
-                    "question": "How do I see my notifications?",
-                    "content_type": "notification",
+                    "question": "How to check notifications?",
+                    "content_type": "Notification",
                     "query": "How to check notifications"
                 },
                 {
-                    "question": "How do I change the app theme?",
-                    "content_type": "change theme",
+                    "question": "How to change the app theme?",
+                    "content_type": "Change theme",
                     "query": "How to change theme"
                 },
                 {
-                    "question": "How do I save a post?",
-                    "content_type": "saved posts",
-                    "query": "How to save posts"
+                    "question": "How to create Interactive Content?",
+                    "content_type": "Interactive snip",
+                    "query": "How to create Interactive Snip"
                 }
             ]
             
