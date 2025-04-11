@@ -541,32 +541,32 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Open the Bigshorts app and tap the Creation Button",
-                    "image_path": "images/Shot/Group 1449.png",
+                    "image_path": "Shot/Group_1449.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Choose 'SHOT' from the Creation Wheel",
-                    "image_path": "images/Shot/Group 1450.png",
+                    "image_path": "Shot/Group_1450.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Capture a SHOT or upload an existing photo from your Device",
-                    "image_path": "images/Shot/Group 1451.png",
+                    "image_path": "Shot/Group_1451.webp",
                     "tips": "SHOT can include multiple Pictures"
                     
                 },
                 {
                     "step": 4,
                     "description": "Edit your SHOT using Bigshorts tools",
-                    "image_path": "images/Shot/Group 1452.png",
+                    "image_path": "Shot/Group_1452.webp",
                     "tips": "Try our AI-powered filters and effects"
                 },
                 {
                     "step": 5,
                     "description": "Add captions, hashtags, and description Or Collab with your Friends and post",
-                    "image_path": "images/Shot/Group 1453.png",
+                    "image_path": "Shot/Group_1453.webp",
                     "tips": "Use trending hashtags for better reach"
                 }
             ],
@@ -577,32 +577,32 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Open the Bigshorts app and tap the Creation Button",
-                    "image_path": "images/Shot/Group 1439.png",
+                    "image_path": "Shot/Group_1439.webp",
                    
                 },
                 {
                     "step": 2,
                     "description": "Choose 'SSUP' from the Creation Wheel",
-                    "image_path": "images/Shot/Group 1440.png",
+                    "image_path": "Shot/Group_1440.webp",
                    
                 },
                 {
                     "step": 3,
                     "description": "Capture a video/image or upload an existing one from your Device",
-                    "image_path": "images/Shot/Group 1441.png",
+                    "image_path": "Shot/Group_1441.webp",
                    
                 },
                 {
                     "step": 4,
                     "description": "Edit your SSUP using Bigshorts tools and tap done",
-                    "image_path": "images/Shot/Group 1442.png",
+                    "image_path": "Shot/Group_1442.webp",
                     "tips": "Try our AI-powered filters and effects"
                     
                 },
                 {
                     "step": 5,
                     "description": "Select your desired Duration, choose who can see your SSUP and Share",
-                    "image_path": "images/Shot/Group 1443.png",
+                    "image_path": "Shot/Group_1443.webp",
                     "tips": "Choose who can see your SSUP"
                     
                 }
@@ -614,28 +614,28 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Open the Bigshorts app and tap the Creation Button",
-                    "image_path": "images/Shot/Group 1444.png",
+                    "image_path": "Shot/Group_1444.webp",
                     "tips": "Ensure stable internet connection"
                 },
                 {
                     "step": 2,
                     "description": "Choose 'SNIP' from the Creation Wheel",
-                    "image_path": "images/Shot/Group 1445.png",
+                    "image_path": "Shot/Group_1445.webp",
                 },
                 {
                     "step": 3,
                     "description": "Capture video or choose a video and click next",
-                    "image_path": "images/Shot/Group 1446.png",
+                    "image_path": "Shot/Group_1446.webp",
                 },
                 {
                     "step": 4,
                     "description": "Edit your SNIP using Bigshorts tools and tap done",
-                    "image_path": "images/Shot/Group 1447.png",
+                    "image_path": "Shot/Group_1447.webp",
                 },
                 {
                     "step": 5,
                     "description": "Add captions, hashtags, and description Or Collab with your Friends",
-                    "image_path": "images/Shot/Group 1448.png",
+                    "image_path": "Shot/Group_1448.webp",
                     "tips": "Use trending hashtags for better reach"
                 }
             ],
@@ -646,37 +646,37 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "While posting, Tap Collaborate with your friends to add mentions in the end.",
-                    "image_path": "images/Shot/Group 1454.png",
+                    "image_path": "Shot/Group_1454.webp",
                     "tips": "Available for creators with 1000+ followers"
                 },
                 {
                     "step": 2,
                     "description": "Search for a user by typing their name in the Search Mention bar, then select them from the list.",
-                    "image_path": "images/Shot/Group 1455.png",
+                    "image_path": "Shot/Group_1455.webp",
                     "tips": "Can add up to 4 collaborators"
                 },
                 {
                     "step": 3,
                     "description": "Once done, you can either save as a draft or post it!",
-                    "image_path": "images/Shot/Group 1456.png",
+                    "image_path": "Shot/Group_1456.webp",
                     "tips": "Clearly define each creator's role"
                 },
                 {
                     "step": 4,
                     "description": "On another account, To approve a collaboration, tap the Notifications button at the top.",
-                    "image_path": "images/Shot/Group 1457.png",
+                    "image_path": "Shot/Group_1457.webp",
                     "tips": "Clearly define each creator's role"
                 },
                 {
                     "step": 5,
                     "description": "Find the Requested to Collaborate notification, then tap Accept — and you're done! 🎉",
-                    "image_path": "images/Shot/Group 1458.png",
+                    "image_path": "Shot/Group_1458.webp",
                     "tips": "Clearly define each creator's role"
                 },
                 {
                     "step": 6,
                     "description": "You can see your colloborated post on scroll screen",
-                    "image_path": "images/Shot/Group 1459.png",
+                    "image_path": "Shot/Group_1459.webp",
                     "tips": "Clearly define each creator's role"
                 }
             ],
@@ -687,37 +687,37 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Apply desired filter and adjust brightness, apart from many effects lets explore image in image (Highlighted in red)",
-                    "image_path": "images/Shot/Group 1475.png",
+                    "image_path": "Shot/Group_1475.webp",
                     "tips": "Try our AI-powered filters and effects"
                 },{
                     "step": 2,
                     "description": "Choose filter of choice and select image (highlighted in red)",
-                    "image_path": "images/Shot/Group 1476.png",
+                    "image_path": "Shot/Group_1476.webp",
                     
                 },{
                     "step": 3,
                     "description": "Choose the image you want, then tap on done to proceed",
-                    "image_path": "images/Shot/Group 1477.png",
+                    "image_path": "Shot/Group_1477.webp",
                     
                 },{
                     "step": 4,
                     "description": "Edit the image as needed, then tap on tick mark to proceed",
-                    "image_path": "images/Shot/Group 1478.png",
+                    "image_path": "Shot/Group_1478.webp",
                     
                 },{
                     "step": 5,
                     "description": "Place the image in image on screen as desiredand tap done",
-                    "image_path": "images/Shot/Group 1479.png",
+                    "image_path": "Shot/Group_1479.webp",
                     
                 },{
                     "step": 6,
                     "description": "Tap done to save effect changes",
-                    "image_path": "images/Shot/Group 1480.png",
+                    "image_path": "Shot/Group_1480.webp",
                     
                 },{
                     "step": 7,
                     "description": "Add captions, hashtags, and description Or Collab with your Friends and post",
-                    "image_path": "images/Shot/Group 1481.png",
+                    "image_path": "Shot/Group_1481.webp",
                 }
             ]
         },
@@ -727,13 +727,13 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "In the Me section, tap Add Friends from the top bar (highlighted in red).",
-                    "image_path": "images/Shot/Group 1533.png",
+                    "image_path": "Shot/Group_1533.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Invite your family and friends easily!",
-                    "image_path": "images/Shot/Group 1534.png",
+                    "image_path": "Shot/Group_1534.webp",
                     
                 }
             ]
@@ -744,25 +744,25 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Tap in the Me section and Tap the 3 lines menu at the top right corner to open settings",
-                    "image_path": "images/Shot/Group 1539.png",
+                    "image_path": "Shot/Group_1539.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Select Feedback (highlighted in red).",
-                    "image_path": "images/Shot/Group 1540.png",
+                    "image_path": "Shot/Group_1540.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Fill in your necessary details",
-                    "image_path": "images/Shot/Group 1541.png",
+                    "image_path": "Shot/Group_1541.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "After filling you feedback/suggestions tap on Submit",
-                    "image_path": "images/Shot/Group 1542.png",
+                    "image_path": "Shot/Group_1542.webp",
                     
                 }
             ]
@@ -773,19 +773,19 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "In Me section, you can switch or add multiple accounts by long-pressing the Me button or on top left click on your username",
-                    "image_path": "images/Shot/Group 1530.png",
+                    "image_path": "Shot/Group_1530.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Select the account by tapping the radio button or add account.",
-                    "image_path": "images/Shot/Group 1531.png",
+                    "image_path": "Shot/Group_1531.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Heres your changed account Me section",
-                    "image_path": "images/Shot/Group 1532.png",
+                    "image_path": "Shot/Group_1532.webp",
                     
                 }
             ]
@@ -796,19 +796,19 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "In Me section, Tap the Account Overview button at the top (highlighted in red).",
-                    "image_path": "images/Shot/Group 1505.png",
+                    "image_path": "Shot/Group_1505.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "View and filter stats for different time periods by tapping the Filter button (highlighted in red).",
-                    "image_path": "images/Shot/Group 1506.png",
+                    "image_path": "Shot/Group_1506.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Scroll to see more metrics and you can also change period for which you want a overview",
-                    "image_path": "images/Shot/Group 1507.png",
+                    "image_path": "Shot/Group_1507.webp",
                     
                 }
             ]
@@ -819,13 +819,13 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Click on Save to Draft at the last stage before posting",
-                    "image_path": "images/Shot/Group 1550.png",
+                    "image_path": "Shot/Group_1550.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "To view or post the content later, navigate to Me section (highlighted in yellow) and tap on the Draft icon (highlighted in red).",
-                    "image_path": "images/Shot/Group 1551.png",
+                    "image_path": "Shot/Group_1551.webp",
                     
                 }
             ]
@@ -836,19 +836,19 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "In Me section, Tap the Hamburger menu at the top (highlighted in red) to open settings.",
-                    "image_path": "images/Shot/Group 1502.png",
+                    "image_path": "Shot/Group_1502.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Select Change Password (highlighted in red).",
-                    "image_path": "images/Shot/Group 1503.png",
+                    "image_path": "Shot/Group_1503.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Enter your current password and new password, then confirm the change.",
-                    "image_path": "images/Shot/Group 1504.png",
+                    "image_path": "Shot/Group_1504.webp",
                     
                 }
             ]
@@ -859,13 +859,13 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "On the Home page, tap on the Notification Bell icon at the top.",
-                    "image_path": "images/Shot/Group 1555.png",
+                    "image_path": "Shot/Group_1555.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Check out all your notifications here.",
-                    "image_path": "images/Shot/Group 1556.png",
+                    "image_path": "Shot/Group_1556.webp",
                     
                 }
             ]
@@ -876,25 +876,25 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "In Me section, Tap the Hamburger menu at the top to open settings.",
-                    "image_path": "images/Shot/Group 1535.png",
+                    "image_path": "Shot/Group_1535.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Select App Theme Preference (highlighted in red).",
-                    "image_path": "images/Shot/Group 1536.png",
+                    "image_path": "Shot/Group_1536.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Choose a theme by tapping on it, based on your preference.",
-                    "image_path": "images/Shot/Group 1537.png",
+                    "image_path": "Shot/Group_1537.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Your new Theme has been applied.",
-                    "image_path": "images/Shot/Group 1538.png",
+                    "image_path": "Shot/Group_1538.webp",
                     
                 }
             ]
@@ -905,25 +905,25 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "On a post, tap on the three-dots menu.",
-                    "image_path": "images/Shot/Group 1543.png",
+                    "image_path": "Shot/Group_1543.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": " Select Report (highlighted in red).",
-                    "image_path": "images/Shot/Group 1544.png",
+                    "image_path": "Shot/Group_1544.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Choose the category of the reported content and add a comment if required.",
-                    "image_path": "images/Shot/Group 1545.png",
+                    "image_path": "Shot/Group_1545.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Tap Submit to finalize the report.",
-                    "image_path": "images/Shot/Group 1546.png",
+                    "image_path": "Shot/Group_1546.webp",
                     
                 }
             ]
@@ -934,35 +934,35 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "On Me page, Tap the Hamburger menu at the top to open settings.",
-                    "image_path": "images/Shot/Group 1496.png",
+                    "image_path": "Shot/Group_1496.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Select Archives (highlighted in red).",
-                    "image_path": "images/Shot/Group 1497.png",
+                    "image_path": "Shot/Group_1497.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Tap the three-dots menu at the top.",
-                    "image_path": "images/Shot/Group 1498.png",
+                    "image_path": "Shot/Group_1498.webp",
                 },
                 {
                     "step": 4,
                     "description": "Select Create a Moment",
-                    "image_path": "images/Shot/Group 1499.png",
+                    "image_path": "Shot/Group_1499.webp",
                     
                 },
                 {
                     "step": 5,
                     "description": "Choose the archive(s) you want to include, add a title (highlighted in red), then tap Confirm at the top (Highlighted in yellow).",
-                    "image_path": "images/Shot/Group 1500.png",
+                    "image_path": "Shot/Group_1500.webp",
                 },
                 {
                     "step": 6,
                     "description": "Hooray! 🎉 Your Moment is now visible on your profile!",
-                    "image_path": "images/Shot/Group 1501.png",
+                    "image_path": "Shot/Group_1501.webp",
                     
                 }
             ]
@@ -973,25 +973,25 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Open the post you want to delete.",
-                    "image_path": "images/Shot/Group 1511.png",
+                    "image_path": "Shot/Group_1511.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Tap the three-dots menu and select Delete Shot (highlighted in red)",
-                    "image_path": "images/Shot/Group 1512.png",
+                    "image_path": "Shot/Group_1512.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Tap on delete Shot",
-                    "image_path": "images/Shot/Group 1513.png",
+                    "image_path": "Shot/Group_1513.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Confirm with Yes — and it's deleted!",
-                    "image_path": "images/Shot/Group 1514.png",
+                    "image_path": "Shot/Group_1514.webp",
                     
                 }
             ]
@@ -1002,19 +1002,19 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "On Me section, Tap on the post you want to check insights for.",
-                    "image_path": "images/Shot/Group 1508.png",
+                    "image_path": "Shot/Group_1508.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Click on Insights (highlighted in red).",
-                    "image_path": "images/Shot/Group 1509.png",
+                    "image_path": "Shot/Group_1509.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "View all key metrics related to your post.",
-                    "image_path": "images/Shot/Group 1510.png",
+                    "image_path": "Shot/Group_1510.webp",
                     
                 }
             ]
@@ -1025,25 +1025,25 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "To save a post, tap the bookmark icon below a post (highlighted in yellow), Navigate to Me (highlighted in red)",
-                    "image_path": "images/Shot/Group 1526.png",
+                    "image_path": "Shot/Group_1526.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Tap on the Saved section (highlighted in red).",
-                    "image_path": "images/Shot/Group 1527.png",
+                    "image_path": "Shot/Group_1527.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "View all your saved photos, videos, and music.",
-                    "image_path": "images/Shot/Group 1528.png",
+                    "image_path": "Shot/Group_1528.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Tap on any folder to check them out.",
-                    "image_path": "images/Shot/Group 1529.png",
+                    "image_path": "Shot/Group_1529.webp",
                     
                 }
             ]
@@ -1054,37 +1054,37 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "In Me section, tap Edit Profile.",
-                    "image_path": "images/Shot/Group 1520.png",
+                    "image_path": "Shot/Group_1520.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Update your personal details and profile picture, To change or remove your profile picture, tap the pencil icon on the image.",
-                    "image_path": "images/Shot/Group 1521.png",
+                    "image_path": "Shot/Group_1521.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Choose to take a photo or select one from your gallery or remove photo",
-                    "image_path": "images/Shot/Group 1522.png",
+                    "image_path": "Shot/Group_1522.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Choose desired photo",
-                    "image_path": "images/Shot/Group 1523.png",
+                    "image_path": "Shot/Group_1523.webp",
                     
                 },
                 {
                     "step":5,
                     "description": "Rotate, Crop and adjust the image, then tap the tick icon at the top (highlighted in red) to save changes.",
-                    "image_path": "images/Shot/Group 1524.png",
+                    "image_path": "Shot/Group_1524.webp",
                     
                 },
                 {
                     "step":6,
                     "description": "Finally, save your profile by clicking on top right save button.",
-                    "image_path": "images/Shot/Group 1525.png",
+                    "image_path": "Shot/Group_1525.webp",
                     
                 }
             ]
@@ -1095,31 +1095,31 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Open the post you want to edit.",
-                    "image_path": "images/Shot/Group 1515.png",
+                    "image_path": "Shot/Group_1515.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Tap the three-dot menu.",
-                    "image_path": "images/Shot/Group 1516.png",
+                    "image_path": "Shot/Group_1516.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Select “Edit Shot” (highlighted in red).",
-                    "image_path": "images/Shot/Group 1517.png",
+                    "image_path": "Shot/Group_1517.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Make the necessary changes like change description, add collab, set who can watch the post, change location",
-                    "image_path": "images/Shot/Group 1518.png",
+                    "image_path": "Shot/Group_1518.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Then tap Update Post — done!",
-                    "image_path": "images/Shot/Group 1519.png",
+                    "image_path": "Shot/Group_1519.webp",
                     
                 }
             ]
@@ -1130,31 +1130,31 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "On the selected user’s post, tap the three-dot menu.",
-                    "image_path": "images/Shot/Group 1482.png",
+                    "image_path": "Shot/Group_1482.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Select Block User — and you're done! 🚫",
-                    "image_path": "images/Shot/Group 1483.png",
+                    "image_path": "Shot/Group_1483.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Go to Me from the bottom navigation bar and click on 3 lines on top right.",
-                    "image_path": "images/Shot/Group 1484.png",
+                    "image_path": "Shot/Group_1484.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Select Blocked Users (highlighted in red).",
-                    "image_path": "images/Shot/Group 1485.png",
+                    "image_path": "Shot/Group_1485.webp",
                     
                 },
                 {
                     "step": 5,
                     "description": "Here, you can view all blocked users or unblock them if needed.",
-                    "image_path": "images/Shot/Group 1486.png",
+                    "image_path": "Shot/Group_1486.webp",
                     
                 }
             ]
@@ -1165,31 +1165,31 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "On the selected user's post, tap the three-dot menu.",
-                    "image_path": "images/Shot/Group 1491.png",
+                    "image_path": "Shot/Group_1491.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Tap Hide Content (highlighted in red), and the user's content is Hidden!.",
-                    "image_path": "images/Shot/Group 1492.png",
+                    "image_path": "Shot/Group_1492.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Go to Me section from the bottom navigation bar, and Tap the Hamburger menu at the top.",
-                    "image_path": "images/Shot/Group 1493.png",
+                    "image_path": "Shot/Group_1493.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Select Hidden Users.",
-                    "image_path": "images/Shot/Group 1494.png",
+                    "image_path": "Shot/Group_1494.webp",
                     
                 },
                 {
                     "step": 5,
                     "description": "Here, you can view the list of hidden users and unhide them if needed.",
-                    "image_path": "images/Shot/Group 1495.png",
+                    "image_path": "Shot/Group_1495.webp",
                     
                 }
             ]
@@ -1200,19 +1200,19 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Click on the message icon on the top right corner to send a message ",
-                    "image_path": "images/Shot/Group 1552.png",
+                    "image_path": "Shot/Group_1552.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Choose the person you want to message ",
-                    "image_path": "images/Shot/Group 1553.png",
+                    "image_path": "Shot/Group_1553.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "To attach(image or videos) in your dm click on the attach icon or you can also record audio and send",
-                    "image_path": "images/Shot/Group 1554.png",
+                    "image_path": "Shot/Group_1554.webp",
                 }
             ]
         },
@@ -1222,25 +1222,25 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Tap scroll icon on the bottom navigation bar (Highlighted in red)",
-                    "image_path": "images/Shot/Group 1487.png",
+                    "image_path": "Shot/Group_1487.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Then click search icon on top bar (Highlighted in red)",
-                    "image_path": "images/Shot/Group 1488.png",
+                    "image_path": "Shot/Group_1488.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Here you can view famous hashtags accordingly on discovery tab on top, to search tap on search icon",
-                    "image_path": "images/Shot/Group 1489.png",
+                    "image_path": "Shot/Group_1489.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "You can search users, hashtag in our search barr",
-                    "image_path": "images/Shot/Group 1490.png",
+                    "image_path": "Shot/Group_1490.webp",
                     
                 }
             ]
@@ -1251,39 +1251,39 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Click on the edit button, after choosing a content to upload",
-                    "image_path": "images/Shot/Group 1468.png",
+                    "image_path": "Shot/Group_1468.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "You can adjust(Brightness, contrast, saturation, sharpness), retouch, makeup and add effects or text and then click on the Save button",
-                    "image_path": "images/Shot/Group 1469.png",
+                    "image_path": "Shot/Group_1469.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "You can also add various effects (like sticker, filter, location, links, image in images, etc), lets explore music",
-                    "image_path": "images/Shot/Group 1470.png",
+                    "image_path": "Shot/Group_1470.webp",
                     
                 },{
                     "step": 4,
                     "description": "Select the music you want",
-                    "image_path": "images/Shot/Group 1471.png",
+                    "image_path": "Shot/Group_1471.webp",
                 },
                 {
                     "step": 5,
                     "description": "Choose the portion of the music and click Apply sound",
-                    "image_path": "images/Shot/Group 1472.png",
+                    "image_path": "Shot/Group_1472.webp",
                 },
                 {
                     "step": 6,
                     "description": "After you have applied your desired effects click on done",
-                    "image_path": "images/Shot/Group 1473.png",
+                    "image_path": "Shot/Group_1473.webp",
                 },
                 {
                     "step": 7,
                     "description": "Select your desired Duration, choose who can see your SSUP and Share",
-                    "image_path": "images/Shot/Group 1474.png",
+                    "image_path": "Shot/Group_1474.webp",
                 }
             ]
         },
@@ -1293,57 +1293,57 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "While editing a snip, add button(highlighted in red) to add interactive elements",
-                    "image_path": "images/Shot/Group 1592.png",
+                    "image_path": "Shot/Group_1592.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Edit the button as needed",
-                    "image_path": "images/Shot/Group 1593.png",
+                    "image_path": "Shot/Group_1593.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Click on the interactive tap button (highlighted in red) to add more interactive elements",
-                    "image_path": "images/Shot/Group 1594.png",
+                    "image_path": "Shot/Group_1594.webp",
                     
                 },{
                     "step": 4,
                     "description": "Select a type of interactive element",
-                    "image_path": "images/Shot/Group 1595.png",
+                    "image_path": "Shot/Group_1595.webp",
                 },
                 {
                     "step": 5,
                     "description": "Capture a snip or select from gallery",
-                    "image_path": "images/Shot/Group 1596.png",
+                    "image_path": "Shot/Group_1596.webp",
                     
                 },
                 {
                     "step": 6,
                     "description": "Click on timeline, to edit interactive duration",
-                    "image_path": "images/Shot/Group 1597.png",
+                    "image_path": "Shot/Group_1597.webp",
                     
                 },{
                     "step": 7,
                     "description": "You can view and adjust the interactive elements timeline here",
-                    "image_path": "images/Shot/Group 1598.png",
+                    "image_path": "Shot/Group_1598.webp",
                 },
                 {
                     "step": 8,
                     "description": "Click on interactive tree hierarchy (highlighted in red)",
-                    "image_path": "images/Shot/Group 1599.png",
+                    "image_path": "Shot/Group_1599.webp",
                     
                 },
                 {
                     "step": 9,
                     "description": "Here you can view hierarchy tree of interactive elements",
-                    "image_path": "images/Shot/Group 1600.png",
+                    "image_path": "Shot/Group_1600.webp",
                     
                 },
                 {
                     "step": 10,
                     "description": "Click on post to publish your interactive video.",
-                    "image_path": "images/Shot/Group 1601.png",
+                    "image_path": "Shot/Group_1601.webp",
                     
                 }
             ]
@@ -1354,34 +1354,34 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Open the Bigshorts app and tap the Creation Button",
-                    "image_path": "images/Shot/Group 1557.png",
+                    "image_path": "Shot/Group_1557.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Choose 'FLIX' from the Creation Wheel",
-                    "image_path": "images/Shot/Group 1558.png",
+                    "image_path": "Shot/Group_1558.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Capture a Flix or upload an existing one from your Device and click next",
-                    "image_path": "images/Shot/Group 1559.png",
+                    "image_path": "Shot/Group_1559.webp",
                     
                 },{
                     "step": 4,
                     "description": "Pick a cover image for your Flix, add description, title, allow comment or who can watch the flix",
-                    "image_path": "images/Shot/Group 1560.png",
+                    "image_path": "Shot/Group_1560.webp",
                     
                 },{
                     "step": 5,
                     "description": "After filling the fields tap on post",
-                    "image_path": "images/Shot/Group 1561.png",
+                    "image_path": "Shot/Group_1561.webp",
                     
                 },{
                     "step": 6,
                     "description": "After it, tap on Post and you're done!",
-                    "image_path": "images/Shot/Group 1562.png",
+                    "image_path": "Shot/Group_1562.webp",
                     
                 }
             ]
@@ -1392,55 +1392,55 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "On Me section, Tap on the Create Mini Drama Series",
-                    "image_path": "images/Shot/Group 1576.png",
+                    "image_path": "Shot/Group_1576.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Select a cover image for the Mini Drama series.",
-                    "image_path": "images/Shot/Group 1577.png",
+                    "image_path": "Shot/Group_1577.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Choose a image from gallery",
-                    "image_path": "images/Shot/Group 1578.png",
+                    "image_path": "Shot/Group_1578.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Edit the cover image that you selected and then save",
-                    "image_path": "images/Shot/Group 1579.png",
+                    "image_path": "Shot/Group_1579.webp",
                     
                 },
                 {
                     "step": 5,
                     "description": "Add season title, description and eventually schedule time.",
-                    "image_path": "images/Shot/Group 1580.png",
+                    "image_path": "Shot/Group_1580.webp",
                     
                 },
                 {
                     "step": 6,
                     "description": "And then click on Create Mini drama series (highlighted in red)",
-                    "image_path": "images/Shot/Group 1581.png",
+                    "image_path": "Shot/Group_1581.webp",
                     
                 },
                 {
                     "step": 7,
                     "description": "Select desired number of flix that you want to add to Mini Drama series",
-                    "image_path": "images/Shot/Group 1582.png",
+                    "image_path": "Shot/Group_1582.webp",
                     
                 },
                 {
                     "step": 8,
                     "description": "And then tap on Add Episodes",
-                    "image_path": "images/Shot/Group 1583.png",
+                    "image_path": "Shot/Group_1583.webp",
                     
                 },
                 {
                     "step": 9,
                     "description": "Viola! your mini drama series is created!",
-                    "image_path": "images/Shot/Group 1584.png",
+                    "image_path": "Shot/Group_1584.webp",
                     
                 }
             ]
@@ -1451,77 +1451,77 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Open the Bigshorts app and tap the Creation Button",
-                    "image_path": "images/Shot/Group 1563.png",
+                    "image_path": "Shot/Group_1563.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Choose 'FLIX' from the Creation Wheel",
-                    "image_path": "images/Shot/Group 1564.png",
+                    "image_path": "Shot/Group_1564.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Capture a Flix or upload an existing one from your Device and click next",
-                    "image_path": "images/Shot/Group 1565.png",
+                    "image_path": "Shot/Group_1565.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "When you chose a video to upload, next you can edit it by Rotate, split, trimming or deleted a splitted clip then tap on tick mark",
-                    "image_path": "images/Shot/Group 1566.png",
+                    "image_path": "Shot/Group_1566.webp",
                    
                 },
                 {
                     "step": 5,
                     "description": "Tap on record to add your voice or any other sound",
-                    "image_path": "images/Shot/Group 1567.png",
+                    "image_path": "Shot/Group_1567.webp",
                     
                 },
                 {
                     "step": 6,
                     "description": "Tap on Record button",
-                    "image_path": "images/Shot/Group 1568.png",
+                    "image_path": "Shot/Group_1568.webp",
                     
                 },{
                     "step": 7,
                     "description": "After recording click on tick mark",
-                    "image_path": "images/Shot/Group 1569.png",
+                    "image_path": "Shot/Group_1569.webp",
                     
                 },
                 {
                     "step": 8,
                     "description": "You can also add sound effect on your recording",
-                    "image_path": "images/Shot/Group 1570.png",
+                    "image_path": "Shot/Group_1570.webp",
                     
                 },
                 {
                     "step": 9,
                     "description": "Select a effect and apply",
-                    "image_path": "images/Shot/Group 1571.png",
+                    "image_path": "Shot/Group_1571.webp",
                     
                 },{
                     "step": 10,
                     "description": "Then tap on tick",
-                    "image_path": "images/Shot/Group 1572.png",
+                    "image_path": "Shot/Group_1572.webp",
                     
                 },
                 {
                     "step": 11,
                     "description": "Click on Time effect in effects board",
-                    "image_path": "images/Shot/Group 1573.png",
+                    "image_path": "Shot/Group_1573.webp",
                     
                 },
                 {
                     "step": 12,
                     "description": "Tap and hold on desired time effect to apply, then tap on tick mark",
-                    "image_path": "images/Shot/Group 1574.png",
+                    "image_path": "Shot/Group_1574.webp",
                     
                 },
                 {
                     "step": 13,
                     "description": "Click Next to save your effects, to proceed to posting",
-                    "image_path": "images/Shot/Group 1575.png",
+                    "image_path": "Shot/Group_1575.webp",
                     
                 }
             ]
@@ -1532,47 +1532,47 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "When uploaded a snip, you can cick on edit for video editing",
-                    "image_path": "images/Shot/Group 1460.png",
+                    "image_path": "Shot/Group_1460.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "You can Rotate, split, trim, or delete clips and tap on tick mark to proceed to effects board",
-                    "image_path": "images/Shot/Group 1461.png",
+                    "image_path": "Shot/Group_1461.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Click on Blur amongst many effects which you can choose to edit",
-                    "image_path": "images/Shot/Group 1462.png",
+                    "image_path": "Shot/Group_1462.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Select a desired shape of blur and apply blur effect",
-                    "image_path": "images/Shot/Group 1463.png",
+                    "image_path": "Shot/Group_1463.webp",
                     
                 },{
                     "step": 5,
                     "description": "Click on the next button to save effects.",
-                    "image_path": "images/Shot/Group 1464.png",
+                    "image_path": "Shot/Group_1464.webp",
                     
                 },{
                     "step": 6,
                     "description": "Here you pick cover image and tap done",
-                    "image_path": "images/Shot/Group 1465.png",
+                    "image_path": "Shot/Group_1465.webp",
                    
                 },
                 {
                     "step": 7,
                     "description": "Click on Done to save changes",
-                    "image_path": "images/Shot/Group 1466.png",
+                    "image_path": "Shot/Group_1466.webp",
                     
                 },
                 {
                     "step": 8,
                     "description": "Add captions, hashtags, and description Or Collab with your Friends and post",
-                    "image_path": "images/Shot/Group 1467.png",
+                    "image_path": "Shot/Group_1467.webp",
                     
                 }
             ]
@@ -1583,19 +1583,19 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Open your friends chats, who have mentioned you, and tap add to ssup (Shown beside mentioned story)",
-                    "image_path": "images/Shot/Group 1547.png",
+                    "image_path": "Shot/Group_1547.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "You can apply effects and then tap post",
-                    "image_path": "images/Shot/Group 1548.png",
+                    "image_path": "Shot/Group_1548.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Select your desired Duration, choose who can see your SSUP and Share",
-                    "image_path": "images/Shot/Group 1549.png",
+                    "image_path": "Shot/Group_1549.webp",
                     
                 }
             ]
@@ -1606,43 +1606,43 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "In Me section, Tap on the Mini Drama Series icon (highlighted in yellow), and tap on the mini drama series you want to edit (highlighted in red)",
-                    "image_path": "images/Shot/Group 1585.png",
+                    "image_path": "Shot/Group_1585.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Tap on three dots on top right corner",
-                    "image_path": "images/Shot/Group 1586.png",
+                    "image_path": "Shot/Group_1586.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Tap on edit on Mini Drama Series",
-                    "image_path": "images/Shot/Group 1587.png",
+                    "image_path": "Shot/Group_1587.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "Edit the cover image, season title or description and click on Edit Mini Drama Series",
-                    "image_path": "images/Shot/Group 1588.png",
+                    "image_path": "Shot/Group_1588.webp",
                     
                 },
                 {
                     "step": 5,
                     "description": "Select new flix to be added in series or remove one.",
-                    "image_path": "images/Shot/Group 1589.png",
+                    "image_path": "Shot/Group_1589.webp",
                     
                 },
                 {
                     "step": 6,
                     "description": "Then tap on + Add episodes",
-                    "image_path": "images/Shot/Group 1590.png",
+                    "image_path": "Shot/Group_1590.webp",
                     
                 },
                 {
                     "step": 6,
                     "description": "Your series  is edited!",
-                    "image_path": "images/Shot/Group 1591.png",
+                    "image_path": "Shot/Group_1591.webp",
                     
                 }
             ]
@@ -1653,25 +1653,25 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 1,
                     "description": "Open messages screen and tap on Requested (highlighted in red)",
-                    "image_path": "images/Shot/Group 1602.png",
+                    "image_path": "Shot/Group_1602.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
                     "description": "Tap on the requesed user chat",
-                    "image_path": "images/Shot/Group 1603.png",
+                    "image_path": "Shot/Group_1603.webp",
                     
                 },
                 {
                     "step": 3,
                     "description": "Choose to approve or deny the user's chat",
-                    "image_path": "images/Shot/Group 1604.png",
+                    "image_path": "Shot/Group_1604.webp",
                     
                 },
                 {
                     "step": 4,
                     "description": "If accepted, you can chat with them now onwards!",
-                    "image_path": "images/Shot/Group 1605.png",
+                    "image_path": "Shot/Group_1605.webp",
                     
                 }
             ]
@@ -1949,7 +1949,7 @@ class BigshortsChatbot:
             "create a playlist": "Playlists let you organize multiple FLIX videos into collections for your audience.",
             "editing a flix": "Our FLIX editing tools help you create professional-quality longer videos.",
             "editing a snip": "SNIP editing features let you create polished, engaging short-form videos.",
-            "moment": "Moments are collections of your archived SSUPs (stories) that you can showcase permanently on your profile - similar to Story Highlights on other platforms. They let you group and save your temporary SSUP content into themed collections that won't disappear after 24 hours."
+            "moment": "Moments are collections of your archived SSUPs (stories) that you can showcase permanently on your profile - similar to Story Highlights on other platforms. They let you Group_and save your temporary SSUP content into themed collections that won't disappear after 24 hours."
         }
     
     def format_history(self, session_id):
