@@ -2059,6 +2059,90 @@ class BigshortsChatbot:
         
         return cleaned
 
+    def handle_yes_reply(self, session_id):
+        """Handles 'yes' replies to previous suggestions or prompts"""
+        try:
+            # Ensure we have at least 2 messages in the session
+            if len(self.sessions[session_id]) < 2:
+                return {"type": "message", "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, FLIX, or any other Bigshorts feature."}
+            
+            # Get the previous assistant message
+            prev_message = self.sessions[session_id][-2]
+            
+            # Ensure the previous message was from the assistant
+            if prev_message["role"] != "assistant":
+                return {"type": "message", "content": "I'm not sure what you're responding 'yes' to. Could you please clarify what you'd like help with?"}
+            
+            # Extract the previous content
+            prev_content = prev_message.get("content", {})
+            
+            # Debug logging
+            print(f"DEBUG - Previous message type: {type(prev_content)}")
+            print(f"DEBUG - Previous message content: {prev_content}")
+            
+            # Handle different types of previous messages
+            def extract_content_type(content):
+                """Try to extract content type from various message formats"""
+                if isinstance(content, dict):
+                    # Check different possible locations for content type
+                    content_type = (
+                        content.get("content", {}).get("content_type") or 
+                        content.get("content_type") or 
+                        next((ct for ct in ALLOWED_CONTENT_TYPES if ct.lower() in str(content).lower()), None)
+                    )
+                    return content_type
+                
+                # For string content, try to find content type
+                content_str = str(content).lower()
+                for ct in ALLOWED_CONTENT_TYPES:
+                    if ct.lower() in content_str:
+                        return ct
+                
+                return None
+            
+            # Extract content type
+            content_type = extract_content_type(prev_content)
+            
+            # If content type found, generate guide
+            if content_type:
+                response = content_creation_guide(content_type)
+                self.sessions[session_id].append({"role": "assistant", "content": response})
+                return response
+            
+            # Check specific message types
+            if isinstance(prev_content, dict):
+                message_type = prev_content.get("type")
+                
+                # Handle specific suggestion types
+                if message_type in ["suggestion", "content_explanation_with_guide_prompt"]:
+                    # Try to extract content type from suggestion text
+                    suggestion_text = str(prev_content.get("content", "")).lower()
+                    for ct in ALLOWED_CONTENT_TYPES:
+                        if ct.lower() in suggestion_text:
+                            response = content_creation_guide(ct)
+                            self.sessions[session_id].append({"role": "assistant", "content": response})
+                            return response
+            
+            # Fallback response if no specific content type is found
+            response = {
+                "type": "message", 
+                "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, FLIX, or any other Bigshorts feature."
+            }
+            self.sessions[session_id].append({"role": "assistant", "content": response})
+            return response
+        
+        except Exception as e:
+            # Comprehensive error handling
+            print(f"Exception in 'yes' handler: {str(e)}")
+            
+            # Provide a detailed fallback response
+            response = {
+                "type": "message", 
+                "content": "I apologize, but I'm having trouble understanding your 'yes' response. Could you please specify which Bigshorts feature you're interested in? Some options include SHOT, SNIP, SSUP, FLIX, or Collab."
+            }
+            self.sessions[session_id].append({"role": "assistant", "content": response})
+            return response
+
     def _is_user_search_query(self, query: str) -> bool:
         """Check if query is looking for a specific user"""
         query_lower = query.lower()
@@ -2386,90 +2470,6 @@ class BigshortsChatbot:
             std_content_type = content_type.lower()
             return natural_phrasing.get(std_content_type, f"use {content_type}")
 
-        
-        def handle_yes_reply(self, session_id):
-            """Handles 'yes' replies to previous suggestions or prompts"""
-            try:
-                # Ensure we have at least 2 messages in the session
-                if len(self.sessions[session_id]) < 2:
-                    return {"type": "message", "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, FLIX, or any other Bigshorts feature."}
-                
-                # Get the previous assistant message
-                prev_message = self.sessions[session_id][-2]
-                
-                # Ensure the previous message was from the assistant
-                if prev_message["role"] != "assistant":
-                    return {"type": "message", "content": "I'm not sure what you're responding 'yes' to. Could you please clarify what you'd like help with?"}
-                
-                # Extract the previous content
-                prev_content = prev_message.get("content", {})
-                
-                # Debug logging
-                print(f"DEBUG - Previous message type: {type(prev_content)}")
-                print(f"DEBUG - Previous message content: {prev_content}")
-                
-                # Handle different types of previous messages
-                def extract_content_type(content):
-                    """Try to extract content type from various message formats"""
-                    if isinstance(content, dict):
-                        # Check different possible locations for content type
-                        content_type = (
-                            content.get("content", {}).get("content_type") or 
-                            content.get("content_type") or 
-                            next((ct for ct in ALLOWED_CONTENT_TYPES if ct.lower() in str(content).lower()), None)
-                        )
-                        return content_type
-                    
-                    # For string content, try to find content type
-                    content_str = str(content).lower()
-                    for ct in ALLOWED_CONTENT_TYPES:
-                        if ct.lower() in content_str:
-                            return ct
-                    
-                    return None
-                
-                # Extract content type
-                content_type = extract_content_type(prev_content)
-                
-                # If content type found, generate guide
-                if content_type:
-                    response = content_creation_guide(content_type)
-                    self.sessions[session_id].append({"role": "assistant", "content": response})
-                    return response
-                
-                # Check specific message types
-                if isinstance(prev_content, dict):
-                    message_type = prev_content.get("type")
-                    
-                    # Handle specific suggestion types
-                    if message_type in ["suggestion", "content_explanation_with_guide_prompt"]:
-                        # Try to extract content type from suggestion text
-                        suggestion_text = str(prev_content.get("content", "")).lower()
-                        for ct in ALLOWED_CONTENT_TYPES:
-                            if ct.lower() in suggestion_text:
-                                response = content_creation_guide(ct)
-                                self.sessions[session_id].append({"role": "assistant", "content": response})
-                                return response
-                
-                # Fallback response if no specific content type is found
-                response = {
-                    "type": "message", 
-                    "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, FLIX, or any other Bigshorts feature."
-                }
-                self.sessions[session_id].append({"role": "assistant", "content": response})
-                return response
-            
-            except Exception as e:
-                # Comprehensive error handling
-                print(f"Exception in 'yes' handler: {str(e)}")
-                
-                # Provide a detailed fallback response
-                response = {
-                    "type": "message", 
-                    "content": "I apologize, but I'm having trouble understanding your 'yes' response. Could you please specify which Bigshorts feature you're interested in? Some options include SHOT, SNIP, SSUP, FLIX, or Collab."
-                }
-                self.sessions[session_id].append({"role": "assistant", "content": response})
-                return response
 
         # Handle content-specific queries
         if content_type != "none":
@@ -2509,7 +2509,7 @@ class BigshortsChatbot:
         if user_input.lower().strip() in ["yes", "yeah", "sure", "ok", "okay"]:
             response = self.handle_yes_reply(session_id)
             return response
-            
+
         # Check for off-topic queries
         if self._is_off_topic(user_input):
             response = get_off_topic_response()
