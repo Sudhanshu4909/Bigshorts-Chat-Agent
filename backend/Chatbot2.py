@@ -2207,19 +2207,31 @@ class BigshortsChatbot:
                     "query": "How to save posts"
                 }
             ]
-    
-            # Combine greeting and FAQs
+            
+            # Create response dictionary with proper structure
             response = {
-            "type": "greeting_with_faqs", 
+                "type": "greeting_with_faqs", 
                 "content": {
                     "greeting": random.choice(greeting_responses),
                     "faqs": faqs
                 }
             }
-    
+            
+            # Double-check for valid JSON serialization
+            try:
+                import json
+                # Test if the response is JSON serializable
+                json.dumps(response)
+            except Exception as e:
+                print(f"Error serializing greeting response: {e}")
+                # Fallback to a simpler response
+                response = {
+                    "type": "message",
+                    "content": random.choice(greeting_responses)
+                }
+            
             self.sessions[session_id].append({"role": "assistant", "content": response})
             return response
-
 
         what_is_patterns = [
         "what is", "what's", "tell me about", "explain", 
