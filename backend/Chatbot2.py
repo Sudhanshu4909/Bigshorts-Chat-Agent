@@ -349,7 +349,7 @@ CONTENT_TYPE_MAPPING = {
     "How to change Email Address": "edit profile",
     "How to update Email Address": "edit profile",
     "Change Profile Description": "edit profile",
-    "update profile description"; "edit profile",
+    "update profile description": "edit profile",
     
     # EDIT POST mappings
     "update post": "edit post", 
