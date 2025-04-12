@@ -544,10 +544,27 @@ def content_creation_guide(content_type: str) -> dict:
     """
     # Standardize input to match allowed content types
     std_content_type = content_type.lower()
-    for mapping_key, mapping_value in CONTENT_TYPE_MAPPING.items():
-        if mapping_key.lower() in std_content_type:
-            std_content_type = mapping_value.lower()
-            break
+
+    # Special handling for editing queries
+    if "edit" in std_content_type or "editing" in std_content_type:
+        # Try to match exact editing content types first
+        for allowed_type in ALLOWED_CONTENT_TYPES:
+            if allowed_type.lower() == std_content_type:
+                std_content_type = allowed_type
+                break
+            
+        # If no exact match, try to extract the content being edited
+        if std_content_type not in [ct.lower() for ct in ALLOWED_CONTENT_TYPES]:
+            for mapping_key, mapping_value in CONTENT_TYPE_MAPPING.items():
+                if mapping_key.lower() in std_content_type and "edit" in mapping_key.lower():
+                    std_content_type = mapping_value.lower()
+                    break
+    else:
+        # Regular content type handling
+        for mapping_key, mapping_value in CONTENT_TYPE_MAPPING.items():
+            if mapping_key.lower() in std_content_type:
+                std_content_type = mapping_value.lower()
+                break
     
     # Only allow predefined content types
     if std_content_type.lower() not in [ct.lower() for ct in ALLOWED_CONTENT_TYPES]:
@@ -1774,26 +1791,32 @@ def display_creation_steps(content_type: str) -> dict:
     }
 
 def detect_content_type(query: str) -> str:
-    """Detects if the user query is related to platform content types
-    Args:
-        query: The user's message
-    Returns:
-        str: Detected content type or "none"
-    """
+    """Detects if the user query is related to platform content types"""
     query_lower = query.lower()
     
-    # Sort content types by length (descending) to prioritize more specific matches
-    sorted_content_types = sorted(ALLOWED_CONTENT_TYPES, key=len, reverse=True)
+    # First check for explicit "editing" or "edit" mentions
+    if "edit" in query_lower or "editing" in query_lower:
+        edit_content_types = [ct for ct in ALLOWED_CONTENT_TYPES if ct.lower().startswith("editing")]
+        # Sort by length to prioritize more specific matches
+        edit_content_types = sorted(edit_content_types, key=len, reverse=True)
+        
+        for edit_type in edit_content_types:
+            # Extract the base content type (e.g., "shot" from "editing a shot")
+            base_type = edit_type.lower().replace("editing a ", "").replace("editing ", "")
+            if base_type in query_lower:
+                return edit_type
     
-    # Check for direct mentions of content types first (prioritizing longer, more specific types)
-    for content_type in sorted_content_types:
+    # Then check for regular content types
+    regular_content_types = [ct for ct in ALLOWED_CONTENT_TYPES if not ct.lower().startswith("editing")]
+    regular_content_types = sorted(regular_content_types, key=len, reverse=True)
+    
+    for content_type in regular_content_types:
         if content_type.lower() in query_lower:
             return content_type
     
-    # Create a sorted list of keywords by length (descending) to prioritize more specific matches
+    # Check for mapped terms
     sorted_keywords = sorted(CONTENT_TYPE_MAPPING.keys(), key=len, reverse=True)
     
-    # Check for related terms (prioritizing longer, more specific terms)
     for keyword in sorted_keywords:
         if keyword.lower() in query_lower:
             return CONTENT_TYPE_MAPPING[keyword]
@@ -2408,6 +2431,13 @@ class BigshortsChatbot:
             }
             self.sessions[session_id].append({"role": "assistant", "content": generic_response})
             return generic_response
+
+        if content_type != "none":
+            # Special handling for editing queries
+            if "edit" in content_type.lower() or "editing" in content_type.lower():
+                response = content_creation_guide(content_type)
+                self.sessions[session_id].append({"role": "assistant", "content": response})
+                return response
 
         if user_input.startswith("FAQ:"):
             # Extract the content type from the FAQ selection format "FAQ: content_type"
