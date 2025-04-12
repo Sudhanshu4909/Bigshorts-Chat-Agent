@@ -15,7 +15,7 @@ ALLOWED_CONTENT_TYPES = [
     "saved posts", "edit profile", "edit post", "block/unblock user", 
     "hide/unhide users", "messages", "discovery", "editing a ssup", 
     "interactive snip", "flix", "create a playlist", "editing a flix", 
-    "editing a snip"
+    "editing a snip", "Mini Drama series", "Edit Mini Drama series"
 ]
 ALLOWED_ISSUE_TYPES = [
     "login", "upload", "notification", "privacy", 
