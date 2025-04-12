@@ -342,6 +342,14 @@ CONTENT_TYPE_MAPPING = {
     "how to edit profile": "edit profile",
     "how to update profile": "edit profile",
     "how to change profile": "edit profile",
+    "How to change username": "edit profile",
+    "How to change Name": "edit profile",
+    "How to change Mobile Number": "edit profile",
+    "How to update Mobile Number": "edit profile",
+    "How to change Email Address": "edit profile",
+    "How to update Email Address": "edit profile",
+    "Change Profile Description": "edit profile",
+    "update profile description"; "edit profile",
     
     # EDIT POST mappings
     "update post": "edit post", 
@@ -397,16 +405,35 @@ CONTENT_TYPE_MAPPING = {
     "how to search": "discovery",
     
     # CREATE A PLAYLIST mappings
-    "playlist": "create a playlist", 
-    "series": "create a playlist", 
-    "collection": "create a playlist",
-    "create playlist": "create a playlist",
-    "make playlist": "create a playlist",
-    "how to playlist": "create a playlist",
-    "how to create playlist": "create a playlist",
-    "how to make playlist": "create a playlist",
-    "how to create a playlist": "create a playlist",
-    "how to make a playlist": "create a playlist"
+    "playlist": "Mini Drama series", 
+    "series": "Mini Drama series", 
+    "collection": "Mini Drama series",
+    "create playlist": "Mini Drama series",
+    "make playlist": "Mini Drama series",
+    "how to playlist": "Mini Drama series",
+    "how to create playlist": "Mini Drama series",
+    "how to make playlist": "Mini Drama series",
+    "how to create a Mini Drama series": "Mini Drama series",
+    "how to make a playlist": "Mini Drama series",
+
+
+    #EDIT A PLAYLIST mappings
+    "edit playlist": "Edit Mini Drama series",
+    "modify playlist": "Edit Mini Drama series",
+    "update playlist": "Edit Mini Drama series",
+    "change playlist": "Edit Mini Drama series",
+    "how to edit playlist": "Edit Mini Drama series",
+    "how to modify playlist": "Edit Mini Drama series",
+    "how to update playlist": "Edit Mini Drama series",
+    "how to change playlist": "Edit Mini Drama series",
+    "edit Mini Drama series": "Edit Mini Drama series",
+    "modify Mini Drama series": "Edit Mini Drama series",
+    "update Mini Drama series": "Edit Mini Drama series",
+    "change Mini Drama series": "Edit Mini Drama series",
+    "how to edit Mini Drama series": "Edit Mini Drama series",
+    "how to modify Mini Drama series": "Edit Mini Drama series",
+    "how to update Mini Drama series": "Edit Mini Drama series",
+    "how to change Mini Drama series": "Edit Mini Drama series",
 }
 
 # Direct implementation of tools as functions
@@ -2437,7 +2464,7 @@ class BigshortsChatbot:
                 "editing a ssup": "edit a SSUP",
                 "interactive snip": "create an interactive SNIP",
                 "flix": "create a FLIX",
-                "create a playlist": "create a playlist",
+                "create a playlist": "Mini Drama series",
                 "editing a flix": "edit a FLIX",
                 "editing a snip": "edit a SNIP"
             }
