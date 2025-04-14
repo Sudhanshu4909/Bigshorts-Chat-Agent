@@ -15,7 +15,7 @@ ALLOWED_CONTENT_TYPES = [
     "saved posts", "edit profile", "edit post", "block/unblock user", 
     "hide/unhide users", "messages", "discovery", "editing a ssup", 
     "interactive snip", "Mini", "create a playlist", "editing a Mini", 
-    "editing a snip", "Mini Drama series", "Edit Mini Drama series"
+    "editing a snip", "Mini Drama series", "Edit Mini Drama series", "Ssup repost"
 ]
 ALLOWED_ISSUE_TYPES = [
     "login", "upload", "notification", "privacy", 
@@ -440,6 +440,33 @@ CONTENT_TYPE_MAPPING = {
     "how to modify Mini Drama series": "Edit Mini Drama series",
     "how to update Mini Drama series": "Edit Mini Drama series",
     "how to change Mini Drama series": "Edit Mini Drama series",
+
+    #SSUP Repost mappings
+    "ssup repost": "SSUP repost",
+    "repost ssup": "SSUP repost",
+    "reshare ssup": "SSUP repost",
+    "share ssup again": "SSUP repost",
+    "upload ssup again": "SSUP repost",
+    "post ssup again": "SSUP repost",
+    "how to repost ssup": "SSUP repost",
+    "how to share ssup again": "SSUP repost",
+    "how to reshare ssup": "SSUP repost",
+    "how to upload ssup again": "SSUP repost",
+    "can I repost ssup": "SSUP repost",
+    "ssup story repost": "SSUP repost",
+    "repost temporary story": "SSUP repost",
+    "reshare temporary story": "SSUP repost",
+    "reupload ssup": "SSUP repost",
+    "story repost": "SSUP repost",
+    "repost story": "SSUP repost",
+    "reshare story": "SSUP repost",
+    "share story again": "SSUP repost",
+    "upload Story again": "SSUP repost",
+    "post story again": "SSUP repost"
+    "How to repost story": "SSUP repost",
+    "How to reshare story": "SSUP repost",
+    "Can i repost Story": "SSUP repost"
+    
 }
 
 # Direct implementation of tools as functions
