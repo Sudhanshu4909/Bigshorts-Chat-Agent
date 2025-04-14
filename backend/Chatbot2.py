@@ -14,7 +14,7 @@ ALLOWED_CONTENT_TYPES = [
     "change theme", "report", "moment", "delete post", "post insights", 
     "saved posts", "edit profile", "edit post", "block/unblock user", 
     "hide/unhide users", "messages", "discovery", "editing a ssup", 
-    "interactive snip", "flix", "create a playlist", "editing a flix", 
+    "interactive snip", "Mini", "create a playlist", "editing a Mini", 
     "editing a snip", "Mini Drama series", "Edit Mini Drama series"
 ]
 ALLOWED_ISSUE_TYPES = [
@@ -26,7 +26,7 @@ ALLOWED_ISSUE_TYPES = [
 ALLOWED_PLATFORM_SECTIONS = [
     "profile", "messages", "settings", "shot", "snip", "ssup", "collab",
     "discovery", "saved", "drafts", "notifications", "feedback", "moments", 
-    "playlist", "flix", "account", "insights", "themes", "blocking", 
+    "playlist", "Mini", "account", "insights", "themes", "blocking", 
     "hiding", "reporting", "editing", "interactive"
 ]
 
@@ -110,17 +110,23 @@ CONTENT_TYPE_MAPPING = {
     "how to make a collab": "collab",
     "how to collaborate": "collab",
     
-    # FLIX mappings
-    "create flix": "flix", 
-    "flix video": "flix", 
-    "long video": "flix", 
-    "episode": "flix",
-    "make flix": "flix",
-    "how to flix": "flix",
-    "how to create flix": "flix",
-    "how to make flix": "flix",
-    "how to create a flix": "flix",
-    "how to make a flix": "flix",
+    # Mini mappings
+    "create Mini": "Mini", 
+    "Mini video": "Mini", 
+    "long video": "Mini", 
+    "large video": "Mini",
+    "Huge video": "Mini",
+    "episode": "Mini",
+    "make Mini": "Mini",
+    "how to Mini": "Mini",
+    "how to create Mini": "Mini",
+    "how to make Mini": "Mini",
+    "how to create a Mini": "Mini",
+    "how to make a Mini": "Mini",
+    "how to make a long video" : "Mini",
+    "how to upload a long video": "Mini",
+    "How to make a drama video": "Mini",
+
     
     # EDITING A SHOT mappings
     "edit shot": "editing a shot", 
@@ -155,17 +161,17 @@ CONTENT_TYPE_MAPPING = {
     "how to change ssup": "editing a ssup",
     "how to change a ssup": "editing a ssup",
     
-    # EDITING A FLIX mappings
-    "edit flix": "editing a flix", 
-    "modify flix": "editing a flix", 
-    "change flix": "editing a flix",
-    "editing flix": "editing a flix",
-    "how to edit flix": "editing a flix",
-    "how to edit a flix": "editing a flix",
-    "how to modify flix": "editing a flix",
-    "how to modify a flix": "editing a flix",
-    "how to change flix": "editing a flix",
-    "how to change a flix": "editing a flix",
+    # EDITING A Mini mappings
+    "edit Mini": "editing a Mini", 
+    "modify Mini": "editing a Mini", 
+    "change Mini": "editing a Mini",
+    "editing Mini": "editing a Mini",
+    "how to edit Mini": "editing a Mini",
+    "how to edit a Mini": "editing a Mini",
+    "how to modify Mini": "editing a Mini",
+    "how to modify a Mini": "editing a Mini",
+    "how to change Mini": "editing a Mini",
+    "how to change a Mini": "editing a Mini",
     
     # INTERACTIVE SNIP mappings - separated from regular snip for clarity
     "interactive video": "interactive snip", 
@@ -410,7 +416,7 @@ CONTENT_TYPE_MAPPING = {
     "collection": "Mini Drama series",
     "create playlist": "Mini Drama series",
     "make playlist": "Mini Drama series",
-    "how to playlist": "Mini Drama series",
+    "how to make playlist": "Mini Drama series",
     "how to create playlist": "Mini Drama series",
     "how to make playlist": "Mini Drama series",
     "how to create a Mini Drama series": "Mini Drama series",
@@ -465,8 +471,8 @@ def platform_guide(section: str) -> str:
         "notifications": "The Notifications section shows all activity related to your account. Would you like me to show you how to check your notifications?",
         "feedback": "You can provide feedback about the platform to help us improve. Would you like me to show you how to submit feedback?",
         "moments": "Moments are collections of your archived content. Would you like me to show you how to create and manage Moments?",
-        "playlist": "Playlists allow you to organize multiple FLIX videos. Would you like me to show you how to create a playlist?",
-        "flix": "FLIX is our platform's longer video format. Would you like me to show you how to create a FLIX?",
+        "playlist": "Playlists allow you to organize multiple Mini videos. Would you like me to show you how to create a playlist?",
+        "Mini": "Mini is our platform's longer video format. Would you like me to show you how to create a Mini?",
         "account": "Account settings let you manage your profile details. Would you like me to show you how to access account settings?",
         "insights": "Insights provide analytics about your content performance. Would you like me to show you how to view your insights?",
         "themes": "You can customize the app's appearance with different themes. Would you like me to show you how to change themes?",
@@ -478,7 +484,7 @@ def platform_guide(section: str) -> str:
     }
     
     # Only return info for allowed sections
-    return platform_sections.get(std_section, "I don't have information about that section. Perhaps you're interested in creating content? Try asking about 'SHOT', 'SNIP', 'SSUP', 'FLIX', or 'collab', or other platform features like 'editing', 'moments', or 'playlists'.")
+    return platform_sections.get(std_section, "I don't have information about that section. Perhaps you're interested in creating content? Try asking about 'SHOT', 'SNIP', 'SSUP', 'Mini', or 'collab', or other platform features like 'editing', 'moments', or 'playlists'.")
     
     # Only return info for allowed sections
     return platform_sections.get(std_section, "I don't have information about that section. Perhaps you're interested in creating content? Try asking about 'SHOT', 'SNIP', 'SSUP', or 'collab'.")
@@ -1392,8 +1398,8 @@ def content_creation_guide(content_type: str) -> dict:
                 }
             ]
         },
-        "Flix": {
-            "title": "Creating a flix",
+        "Mini": {
+            "title": "Creating a Mini",
             "steps": [
                 {
                     "step": 1,
@@ -1403,18 +1409,18 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 2,
-                    "description": "Choose 'FLIX' from the Creation Wheel",
+                    "description": "Choose 'Mini' from the Creation Wheel",
                     "image_path": "Shot/Group_1558.webp",
                     
                 },
                 {
                     "step": 3,
-                    "description": "Capture a Flix or upload an existing one from your Device and click next",
+                    "description": "Capture a Mini or upload an existing one from your Device and click next",
                     "image_path": "Shot/Group_1559.webp",
                     
                 },{
                     "step": 4,
-                    "description": "Pick a cover image for your Flix, add description, title, allow comment or who can watch the flix",
+                    "description": "Pick a cover image for your Mini, add description, title, allow comment or who can watch the Mini",
                     "image_path": "Shot/Group_1560.webp",
                     
                 },{
@@ -1471,7 +1477,7 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 7,
-                    "description": "Select desired number of flix that you want to add to Mini Drama series",
+                    "description": "Select desired number of Mini that you want to add to Mini Drama series",
                     "image_path": "Shot/Group_1582.webp",
                     
                 },
@@ -1489,8 +1495,8 @@ def content_creation_guide(content_type: str) -> dict:
                 }
             ]
         },
-        "Editing a flix": {
-            "title": "Editing a BigShorts flix",
+        "Editing a Mini": {
+            "title": "Editing a BigShorts Mini",
             "steps": [
                 {
                     "step": 1,
@@ -1500,13 +1506,13 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 2,
-                    "description": "Choose 'FLIX' from the Creation Wheel",
+                    "description": "Choose 'Mini' from the Creation Wheel",
                     "image_path": "Shot/Group_1564.webp",
                     
                 },
                 {
                     "step": 3,
-                    "description": "Capture a Flix or upload an existing one from your Device and click next",
+                    "description": "Capture a Mini or upload an existing one from your Device and click next",
                     "image_path": "Shot/Group_1565.webp",
                     
                 },
@@ -1673,7 +1679,7 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 5,
-                    "description": "Select new flix to be added in series or remove one.",
+                    "description": "Select new Mini to be added in series or remove one.",
                     "image_path": "Shot/Group_1589.webp",
                     
                 },
@@ -1727,8 +1733,8 @@ def content_creation_guide(content_type: str) -> dict:
         guides_case_insensitive[key.lower()] = value
     
     # CRITICAL FIX: Look up key by its lowercase version
-    # This handles cases where "editing a flix" in the request
-    # needs to match "Editing a flix" in the guides dictionary
+    # This handles cases where "editing a Mini" in the request
+    # needs to match "Editing a Mini" in the guides dictionary
     lookup_key = std_content_type.lower()
     
     # Debug output if needed
@@ -1995,9 +2001,9 @@ class BigshortsChatbot:
             "discovery": "The discovery page helps you find new content, creators, and trending topics.",
             "editing a ssup": "You can enhance your SSUP stories with various editing tools, effects, and interactive elements.",
             "interactive snip": "Interactive SNIPs allow viewers to engage with your videos through buttons and other clickable elements.",
-            "flix": "FLIX is our platform's longer-form video format, perfect for more in-depth content.",
-            "create a playlist": "Playlists let you organize multiple FLIX videos into collections for your audience.",
-            "editing a flix": "Our FLIX editing tools help you create professional-quality longer videos.",
+            "Mini": "Mini is our platform's longer-form video format, perfect for more in-depth content.",
+            "create a playlist": "Playlists let you organize multiple Mini videos into collections for your audience.",
+            "editing a Mini": "Our Mini editing tools help you create professional-quality longer videos.",
             "editing a snip": "SNIP editing features let you create polished, engaging short-form videos.",
             "moment": "Moments are collections of your archived SSUPs (stories) that you can showcase permanently on your profile - similar to Story Highlights on other platforms. They let you Group_and save your temporary SSUP content into themed collections that won't disappear after 24 hours."
         }
@@ -2116,7 +2122,7 @@ class BigshortsChatbot:
             if len(self.sessions[session_id]) < 2:
                 return {
                     "type": "message", 
-                    "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, FLIX, or any other Bigshorts feature."
+                    "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, Mini, or any other Bigshorts feature."
                 }
             
             # Get the previous assistant message
@@ -2156,7 +2162,7 @@ class BigshortsChatbot:
             # Fallback response if no specific content type is found
             return {
                 "type": "message", 
-                "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, FLIX, or any other Bigshorts feature."
+                "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, Mini, or any other Bigshorts feature."
             }
         
         except Exception as e:
@@ -2166,7 +2172,7 @@ class BigshortsChatbot:
             # Provide a detailed fallback response
             return {
                 "type": "message", 
-                "content": "I apologize, but I'm having trouble understanding your 'yes' response. Could you please specify which Bigshorts feature you're interested in? Some options include SHOT, SNIP, SSUP, FLIX, or Collab."
+                "content": "I apologize, but I'm having trouble understanding your 'yes' response. Could you please specify which Bigshorts feature you're interested in? Some options include SHOT, SNIP, SSUP, Mini, or Collab."
             }
 
     def _is_user_search_query(self, query: str) -> bool:
@@ -2277,6 +2283,16 @@ class BigshortsChatbot:
 
             faqs = [
                 {
+                    "question": "How to create a MINI video?",
+                    "content_type": "Mini",
+                    "query": "How to create a Mini"
+                },
+                {
+                    "question": "How to create Interactive Content?",
+                    "content_type": "Interactive snip",
+                    "query": "How to create Interactive Snip"
+                },
+                {
                     "question": "How do I create a SHOT?",
                     "content_type": "shot",
                     "query": "How to create a shot"
@@ -2306,11 +2322,6 @@ class BigshortsChatbot:
                     "content_type": "Change theme",
                     "query": "How to change app theme?"
                 },
-                {
-                    "question": "How to create Interactive Content?",
-                    "content_type": "Interactive snip",
-                    "query": "How to create Interactive Snip"
-                }
             ]
             
             # Create response dictionary with proper structure
@@ -2382,8 +2393,8 @@ class BigshortsChatbot:
             if "content types" in user_input.lower() or "features" in user_input.lower() or "guides" in user_input.lower():
                 # Provide a categorized overview of content types
                 categories = {
-                    "Content Creation": ["shot", "snip", "ssup", "collab", "flix"],
-                    "Content Editing": ["editing a shot", "editing a ssup", "editing a snip", "editing a flix", "interactive snip"],
+                    "Content Creation": ["shot", "snip", "ssup", "collab", "Mini"],
+                    "Content Editing": ["editing a shot", "editing a ssup", "editing a snip", "editing a Mini", "interactive snip"],
                     "Profile Management": ["edit profile", "multiple accounts", "account overview", "change password", "block/unblock user"],
                     "Content Management": ["store draft", "delete post", "edit post", "saved posts", "post insights", "create a playlist"],
                     "App Settings": ["notification", "change theme", "feedback", "invite friends", "report", "hide/unhide users"]
@@ -2427,7 +2438,7 @@ class BigshortsChatbot:
             # Generate a generic response about Bigshorts rather than defaulting to a specific guide
             generic_response = {
                 "type": "message",
-                "content": "I see you're asking about Bigshorts! I can help you with creating content (SHOT, SNIP, SSUP, FLIX), managing your account, using platform features, or troubleshooting issues. What specific aspect of Bigshorts would you like to know more about?"
+                "content": "I see you're asking about Bigshorts! I can help you with creating content (SHOT, SNIP, SSUP, Mini), managing your account, using platform features, or troubleshooting issues. What specific aspect of Bigshorts would you like to know more about?"
             }
             self.sessions[session_id].append({"role": "assistant", "content": generic_response})
             return generic_response
@@ -2493,9 +2504,9 @@ class BigshortsChatbot:
                 "discovery": "discover new content",
                 "editing a ssup": "edit a SSUP",
                 "interactive snip": "create an interactive SNIP",
-                "flix": "create a FLIX",
+                "Mini": "create a Mini",
                 "create a playlist": "Mini Drama series",
-                "editing a flix": "edit a FLIX",
+                "editing a Mini": "edit a Mini",
                 "editing a snip": "edit a SNIP"
             }
     
@@ -2591,7 +2602,7 @@ class BigshortsChatbot:
             print(f"Error generating response: {str(e)}")
             error_response = {
                 "type": "error",
-                "content": "I'm sorry, I couldn't process that request. Can I help you with creating SHOT, SNIP, SSUP, FLIX, or Collab content? Or would you like guidance on other features like editing, moments, or playlists?"
+                "content": "I'm sorry, I couldn't process that request. Can I help you with creating SHOT, SNIP, SSUP, Mini, or Collab content? Or would you like guidance on other features like editing, moments, or playlists?"
             }
             self.sessions[session_id].append({"role": "assistant", "content": error_response})
             return error_response
