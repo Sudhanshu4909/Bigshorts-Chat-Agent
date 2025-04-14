@@ -462,7 +462,7 @@ CONTENT_TYPE_MAPPING = {
     "reshare story": "SSUP repost",
     "share story again": "SSUP repost",
     "upload Story again": "SSUP repost",
-    "post story again": "SSUP repost"
+    "post story again": "SSUP repost",
     "How to repost story": "SSUP repost",
     "How to reshare story": "SSUP repost",
     "Can i repost Story": "SSUP repost"
