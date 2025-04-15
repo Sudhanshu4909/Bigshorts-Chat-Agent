@@ -221,6 +221,7 @@ CONTENT_TYPE_MAPPING = {
     "how to add multiple accounts": "multiple accounts",
     "how to switch account": "multiple accounts",
     "how to switch accounts": "multiple accounts",
+    "how to change account": "multiple accounts",
     "how to manage multiple accounts": "multiple accounts",
     "multiple profile": "multiple accounts",
     "multiple profiles": "multiple accounts",
@@ -442,30 +443,30 @@ CONTENT_TYPE_MAPPING = {
     "how to change Mini Drama series": "Edit Mini Drama series",
 
     #SSUP Repost mappings
-    "ssup repost": "SSUP repost",
-    "repost ssup": "SSUP repost",
-    "reshare ssup": "SSUP repost",
-    "share ssup again": "SSUP repost",
-    "upload ssup again": "SSUP repost",
-    "post ssup again": "SSUP repost",
-    "how to repost ssup": "SSUP repost",
-    "how to share ssup again": "SSUP repost",
-    "how to reshare ssup": "SSUP repost",
-    "how to upload ssup again": "SSUP repost",
-    "can I repost ssup": "SSUP repost",
-    "ssup story repost": "SSUP repost",
-    "repost temporary story": "SSUP repost",
-    "reshare temporary story": "SSUP repost",
-    "reupload ssup": "SSUP repost",
-    "story repost": "SSUP repost",
-    "repost story": "SSUP repost",
-    "reshare story": "SSUP repost",
-    "share story again": "SSUP repost",
-    "upload Story again": "SSUP repost",
-    "post story again": "SSUP repost",
-    "How to repost story": "SSUP repost",
-    "How to reshare story": "SSUP repost",
-    "Can i repost Story": "SSUP repost"
+    "ssup repost": "Ssup repost",
+    "repost ssup": "Ssup repost",
+    "reshare ssup": "Ssup repost",
+    "share ssup again": "Ssup repost",
+    "upload ssup again": "Ssup repost",
+    "post ssup again": "Ssup repost",
+    "how to repost ssup": "Ssup repost",
+    "how to share ssup again": "Ssup repost",
+    "how to reshare ssup": "Ssup repost",
+    "how to upload ssup again": "Ssup repost",
+    "can I repost ssup": "Ssup repost",
+    "ssup story repost": "Ssup repost",
+    "repost temporary story": "Ssup repost",
+    "reshare temporary story": "Ssup repost",
+    "reupload ssup": "Ssup repost",
+    "story repost": "Ssup repost",
+    "repost story": "Ssup repost",
+    "reshare story": "Ssup repost",
+    "share story again": "Ssup repost",
+    "upload Story again": "Ssup repost",
+    "post story again": "Ssup repost",
+    "How to repost story": "Ssup repost",
+    "How to reshare story": "Ssup repost",
+    "Can i repost Story": "Ssup repost"
     
 }
 
@@ -2310,42 +2311,42 @@ class BigshortsChatbot:
 
             faqs = [
                 {
-                    "question": "How to create a MINI video?",
+                    "question": "How to create a MINI ?",
                     "content_type": "Mini",
                     "query": "How to create a Mini"
                 },
                 {
-                    "question": "How to create Interactive Content?",
+                    "question": "How to create Interactive Content ?",
                     "content_type": "Interactive snip",
                     "query": "How to create Interactive Snip"
                 },
                 {
-                    "question": "How do I create a SHOT?",
+                    "question": "How do I create a SHOT ?",
                     "content_type": "shot",
                     "query": "How to create a shot"
                 },
                 {
-                    "question": "How do I create a SNIP?",
+                    "question": "How do I create a SNIP ?",
                     "content_type": "snip",
                     "query": "How to create a snip"
                 },
                 {
-                    "question": "How do I create a SSUP?",
+                    "question": "How do I create a SSUP ?",
                     "content_type": "ssup",
                     "query": "How to create a ssup"
                 },
                 {
-                    "question": "How do I make a Collab post?",
+                    "question": "How do I make a Collab post ?",
                     "content_type": "collab",
                     "query": "How to collaborate"
                 },
                 {
-                    "question": "How do I edit my profile?",
+                    "question": "How do I edit my profile ?",
                     "content_type": "edit profile",
                     "query": "How to edit profile"
                 },
                 {
-                    "question": "How to change app theme?",
+                    "question": "How to change app theme ?",
                     "content_type": "Change theme",
                     "query": "How to change app theme?"
                 },
