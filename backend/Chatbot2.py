@@ -1925,7 +1925,7 @@ def suggest_trending_content(content_type: str = "all") -> dict:
     
     if content_type.lower() == "creators" or content_type.lower() == "all":
         buttons.append({
-            "text": "Discover Popular SSUPS",
+            "text": "Discover Popular ssups",
             "action": "redirect",
             "destination": "/trending/creators"
         })
