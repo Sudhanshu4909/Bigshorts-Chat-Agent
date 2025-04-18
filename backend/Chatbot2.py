@@ -1864,13 +1864,13 @@ def fallback_response() -> str:
 def get_off_topic_response() -> str:
     """Returns a standardized response for off-topic queries"""
     responses = [
-        "I'm your Bigshorts assistant, Gyaani ! I can help you create amazing content (SHOT, SNIP, SSUP, Collab), troubleshoot any platform issues, or discover trending content. What would you like to explore today?",
+        "I'm your assistant, Gyaan.Ai ! I can help you create amazing content (SHOT, SNIP, SSUP, Collab), troubleshoot any platform issues, or discover trending content. What would you like to explore today?",
         
         "Let's focus on making your Bigshorts experience amazing! I can guide you through creating content, solve platform issues, or show you what's trending. How can I enhance your Bigshorts journey today?",
         
         "Welcome to Bigshorts support! I'm here to help you create standout content, fix any platform issues, or discover what's trending. What aspect of Bigshorts would you like assistance with?",
         
-        "As your Bigshorts assistant Gyaani, I can help you create stunning SHOT photos, viral SNIP videos, engaging SSUP stories, or collaborative content. I can also troubleshoot any platform issues. What interests you most?"
+        "As your assistant Gyaan.Ai, I can help you create stunning SHOT photos, viral SNIP videos, engaging SSUP stories, or collaborative content. I can also troubleshoot any platform issues. What interests you most?"
     ]
     
     # Return a random response from the list for variety
@@ -2280,7 +2280,7 @@ class BigshortsChatbot:
                 "Hello! 😀 Welcome to Bigshorts! Ready to create some awesome content today?",
                 "Hey there! 😃 The Bigshorts community has been buzzing with creativity. What would you like to create today?",
                 "Hi! 😊 Looking to make a SHOT, SNIP, SSUP, or Collab on Bigshorts today?",
-                "Greetings! 👋 Your Bigshorts assistant Gyaani is ready to help you shine on the platform!",
+                "Greetings! 👋 Your Bigshorts assistant Gyaan.Ai is ready to help you shine on the platform!",
                 "Wassup! 😎 Ready to level up your Bigshorts content? I can help with SHOT, SNIP, SSUP, or Collab!",
                 "Hey! 🚀 Trending content on Bigshorts is getting millions of views today. Want to create something awesome?",
                 "Hello there! 🤗 What type of Bigshorts content are you looking to create today?",
@@ -2304,7 +2304,7 @@ class BigshortsChatbot:
                 "Ciao! 🇮🇹 Style and substance make the best Bigshorts content. Need help with either?",
                 "What's good! 🏅 The best Bigshorts creators post consistently. Ready to plan your next content piece?",
                 "Hi there! 🎭 Discover what's trending on Bigshorts or create something completely new!",
-                "Hey hey! 🎬 Your Bigshorts assistant Gyaani is ready to help with SHOT photos, SNIP videos, SSUP stories, or Collabs!",
+                "Hey hey! 🎬 Your Bigshorts assistant Gyaan.Ai is ready to help with SHOT photos, SNIP videos, SSUP stories, or Collabs!",
                 "Yo yo! 🚀 Bigshorts creators are changing the game! Want to join the revolution?",
                 "How are things? 🛠 Whether you need help with Bigshorts creation or troubleshooting, I've got you covered!"
             ]
@@ -2656,7 +2656,7 @@ def run_chatbot():
     try:
         chatbot = BigshortsChatbot(model_path)
         
-        print("Bigshorts Assistant: Hi! I'm your Bigshorts assistant, Gyaani. I can help with creating SHOT, SNIP, SSUP, or Collab content. How can I assist you today?")
+        print("Bigshorts Assistant: Hi! I'm your assistant, Gyaan.Ai I can help with creating SHOT, SNIP, SSUP, or Collab content. How can I assist you today?")
         
         while True:
             try:
