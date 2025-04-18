@@ -864,7 +864,7 @@ def content_creation_guide(content_type: str) -> dict:
                     "step": 3,
                     "description": "Heres your changed account Me section",
                     "image_path": "Shot/Group_1532.webp",
-                    
+ 
                 }
             ]
         },
@@ -1864,7 +1864,7 @@ def fallback_response() -> str:
 def get_off_topic_response() -> str:
     """Returns a standardized response for off-topic queries"""
     responses = [
-        "I'm your assistant, Gyan.Ai ! I can help you create amazing content (SHOT, SNIP, SSUP, Collab), troubleshoot any platform issues, or discover trending content. What would you like to explore today?",
+        "I'm your assistant, Gyan.Ai I can help you create amazing content (SHOT, SNIP, SSUP, MINI), troubleshoot any platform issues, or discover trending content. What would you like to explore today?",
         
         "Let's focus on making your Bigshorts experience amazing! I can guide you through creating content, solve platform issues, or show you what's trending. How can I enhance your Bigshorts journey today?",
         
@@ -2279,9 +2279,9 @@ class BigshortsChatbot:
             greeting_responses = [
                 "Hello! 😀 Welcome to Bigshorts! Ready to create some awesome content today?",
                 "Hey there! 😃 The Bigshorts community has been buzzing with creativity. What would you like to create today?",
-                "Hi! 😊 Looking to make a SHOT, SNIP, SSUP, or Collab on Bigshorts today?",
+                "Hi! 😊 Looking to make a SHOT, SNIP, SSUP, or MINI on Bigshorts today?",
                 "Greetings! 👋 Your Bigshorts assistant Gyan.Ai is ready to help you shine on the platform!",
-                "Wassup! 😎 Ready to level up your Bigshorts content? I can help with SHOT, SNIP, SSUP, or Collab!",
+                "Wassup! 😎 Ready to level up your Bigshorts content? I can help with SHOT, SNIP, SSUP, or MINI!",
                 "Hey! 🚀 Trending content on Bigshorts is getting millions of views today. Want to create something awesome?",
                 "Hello there! 🤗 What type of Bigshorts content are you looking to create today?",
                 "Hi! ✨ Your Bigshorts creative journey starts here - what can I help you with?",
@@ -2295,7 +2295,7 @@ class BigshortsChatbot:
                 "Good evening! 🌙 Night time is prime time for Bigshorts engagement. Need help creating content?",
                 "Howdy! 🤠 Your Bigshorts creative partner is here to assist with any content needs!",
                 "Bonjour! 🇫🇷 Bigshorts is going global, and I'm here to help you create content that connects!",
-                "Aloha! 🌺 Bring some sunshine to Bigshorts with your next SHOT, SNIP, SSUP, or Collab!",
+                "Aloha! 🌺 Bring some sunshine to Bigshorts with your next SHOT, SNIP, SSUP, or MINI!",
                 "Heya! 🎨 The Bigshorts algorithm loves fresh content. What would you like to create today?",
                 "Sup! 🏆 Bigshorts is all about authentic content. Need help making yours stand out?",
                 "How's it going? 💡 Ready to explore some creative ideas for your next Bigshorts post?",
@@ -2304,7 +2304,7 @@ class BigshortsChatbot:
                 "Ciao! 🇮🇹 Style and substance make the best Bigshorts content. Need help with either?",
                 "What's good! 🏅 The best Bigshorts creators post consistently. Ready to plan your next content piece?",
                 "Hi there! 🎭 Discover what's trending on Bigshorts or create something completely new!",
-                "Hey hey! 🎬 Your Bigshorts assistant Gyan.Ai is ready to help with SHOT photos, SNIP videos, SSUP stories, or Collabs!",
+                "Hey hey! 🎬 Your Bigshorts assistant Gyan.Ai is ready to help with SHOT photos, SNIP videos, SSUP stories, or MINI!",
                 "Yo yo! 🚀 Bigshorts creators are changing the game! Want to join the revolution?",
                 "How are things? 🛠 Whether you need help with Bigshorts creation or troubleshooting, I've got you covered!"
             ]
