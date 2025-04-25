@@ -113,8 +113,14 @@ CONTENT_TYPE_MAPPING = {
     # Mini mappings
     "create Mini": "Mini", 
     "Mini video": "Mini", 
-    "long video": "Mini", 
+    "long video": "Mini",
+    "long content": "Mini", 
     "large video": "Mini",
+    "Longform": "Mini",
+    "Long Form": "Mini",
+    "Longform Video": "Mini",
+    "Longform content": "Mini",
+    "Long content": "Mini",
     "Huge video": "Mini",
     "episode": "Mini",
     "make Mini": "Mini",
@@ -1923,7 +1929,7 @@ def suggest_trending_content(content_type: str = "all") -> dict:
             "destination": "/trending/snips"
         })
     
-    if content_type.lower() == "creators" or content_type.lower() == "all":
+    if content_type.lower() == "ssups" or content_type.lower() == "all":
         buttons.append({
             "text": "Discover Popular ssups",
             "action": "redirect",
