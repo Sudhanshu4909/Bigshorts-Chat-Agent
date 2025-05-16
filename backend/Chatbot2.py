@@ -15,7 +15,7 @@ ALLOWED_CONTENT_TYPES = [
     "saved posts", "edit profile", "edit post", "block/unblock user", 
     "hide/unhide users", "messages", "discovery", "editing a ssup", 
     "interactive snip", "Mini", "create a playlist", "editing a Mini", 
-    "editing a snip", "Mini Drama series", "Edit Mini Drama series", "Ssup repost"
+    "editing a snip", "Mini Drama series", "Edit Mini Drama series", "Ssup repost","Snip to Mini" 
 ]
 ALLOWED_ISSUE_TYPES = [
     "login", "upload", "notification", "privacy", 
@@ -472,8 +472,29 @@ CONTENT_TYPE_MAPPING = {
     "post story again": "Ssup repost",
     "How to repost story": "Ssup repost",
     "How to reshare story": "Ssup repost",
-    "Can i repost Story": "Ssup repost"
+    "Can i repost Story": "Ssup repost",
     
+    #Snip to MINI
+    "link snip to mini": "Snip to Mini",
+    "connect snip to mini": "Snip to Mini",
+    "attach mini to snip": "Snip to Mini",
+    "add mini to snip": "Snip to Mini",
+    "snip with mini": "Snip to Mini",
+    "interactive snip with mini": "Snip to Mini",
+    "mini from snip": "Snip to Mini",
+    "snip mini drama link": "Snip to Mini",
+    "how to link snip to mini": "Snip to Mini",
+    "how to connect snip to mini": "Snip to Mini",
+    "how to attach mini to snip": "Snip to Mini",
+    "how to add mini to snip": "Snip to Mini",
+    "linking snip to mini": "Snip to Mini",
+    "connecting snip to mini": "Snip to Mini",
+    "attach mini drama to snip": "Snip to Mini",
+    "add mini drama to snip": "Snip to Mini",
+    "use snip to promote mini": "Snip to Mini",
+    "redirect from snip to mini": "Snip to Mini",
+    "snip to mini drama conversion": "Snip to Mini",
+    "convert snip to mini": "Snip to Mini"
 }
 
 # Direct implementation of tools as functions
@@ -1759,7 +1780,64 @@ def content_creation_guide(content_type: str) -> dict:
                     
                 }
             ]
-        }
+        },
+        "Snip to Mini": {
+            "title": "Linking Mini Dramas to Snip",
+            "steps": [
+                {
+                    "step": 1,
+                    "description": "While editing a snip, add button(highlighted in red) to add interactive elements",
+                    "image_path": "Shot/Group_165.webp",
+                    "tips": "Make sure you're on the latest app version for all features"
+                },
+                {
+                    "step": 2,
+                    "description": "Edit the button as needed",
+                    "image_path": "Shot/Group_166.webp",
+                    
+                },
+                {
+                    "step": 3,
+                    "description": "Click on the interactive tap button (highlighted in red) to add  interactive elements",
+                    "image_path": "Shot/Group_167.webp",
+                    
+                },{
+                    "step": 4,
+                    "description": "Select Attach Existing Mini from the options",
+                    "image_path": "Shot/Group_168.webp",
+                },
+                {
+                    "step": 5,
+                    "description": "Select a Mini Drama to link from your uploaded list and tap Link existing Mini button",
+                    "image_path": "Shot/Group_169.webp",
+                    
+                },
+                {
+                    "step": 6,
+                    "description": "Click on interactive tree hierarchy (highlighted in red)",
+                    "image_path": "Shot/Group_170.webp",
+                    
+                },
+                {
+                    "step": 7,
+                    "description": "Here you can view hierarchy tree of interactive elements",
+                    "image_path": "Shot/Group_171.webp",
+                    
+                },
+                {
+                    "step": 8,
+                    "description": "Edit the Snip further if required and Tap Done",
+                    "image_path": "Shot/Group_172.webp",
+                    
+                },
+                {
+                    "step": 9,
+                    "description": "Add a caption, tag friends, and click Post to share your Snip",
+                    "image_path": "Shot/Group_173.webp",
+                    
+                }
+            ]
+        },
     }
     
 
@@ -2039,7 +2117,8 @@ class BigshortsChatbot:
             "create a playlist": "Playlists let you organize multiple Mini videos into collections for your audience.",
             "editing a Mini": "Our Mini editing tools help you create professional-quality longer videos.",
             "editing a snip": "SNIP editing features let you create polished, engaging short-form videos.",
-            "moment": "Moments are collections of your archived SSUPs (stories) that you can showcase permanently on your profile - similar to Story Highlights on other platforms. They let you Group_and save your temporary SSUP content into themed collections that won't disappear after 24 hours."
+            "moment": "Moments are collections of your archived SSUPs (stories) that you can showcase permanently on your profile - similar to Story Highlights on other platforms. They let you Group_and save your temporary SSUP content into themed collections that won't disappear after 24 hours.",
+            "Snip to Mini": "Linking Mini Dramas to Snips lets you create interactive short videos that lead viewers to your longer Mini content. This feature helps drive traffic to your Mini Drama series and increases engagement."
         }
     
     def format_history(self, session_id):
@@ -2360,10 +2439,15 @@ class BigshortsChatbot:
             
             # Create response dictionary with proper structure
             response = {
-                "type": "greeting_with_faqs", 
+                "type": "greeting_with_faqs_and_special", 
                 "content": {
                     "greeting": random.choice(greeting_responses),
-                    "faqs": faqs
+                    "faqs": faqs,
+                    "special_button": {
+                        "text": "Link Snip to Mini Drama",
+                        "content_type": "Snip to Mini",
+                        "query": "How to link Snip to Mini Drama"
+                    }
                 }
             }
             
@@ -2505,6 +2589,11 @@ class BigshortsChatbot:
                 print(f"Error handling FAQ selection: {str(e)}")
                 # If something goes wrong, fallback to regular processing
                 pass
+            
+        if user_input.startswith("FAQ: Snip to Mini") or user_input.lower() == "link snip to mini drama":
+            response = content_creation_guide("Snip to Mini")
+            self.sessions[session_id].append({"role": "assistant", "content": response})
+            return response
 
 
         def get_natural_content_phrasing(content_type: str) -> str:
@@ -2705,6 +2794,17 @@ def run_chatbot():
                         prompt = response.get('content', {}).get('prompt', '')
                         print(f"Bigshorts Assistant: {explanation}")
                         print(f"\n{prompt}")
+                    elif response.get("type") == "greeting_with_faqs_and_special":
+                        greeting = response.get('content', {}).get('greeting', '')
+                        print(f"Bigshorts Assistant: {greeting}")
+                        print("\nFrequently Asked Questions:")
+                        faqs = response.get('content', {}).get('faqs', [])
+                        for i, faq in enumerate(faqs):
+                            print(f"{i+1}. {faq.get('question', '')}")
+                        
+                        special_button = response.get('content', {}).get('special_button', {})
+                        print("\nSpecial Feature:")
+                        print(f"→ {special_button.get('text', '')}")
                     else:
                         print(f"Bigshorts Assistant: {response}")
                 else:
