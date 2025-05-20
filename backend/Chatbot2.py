@@ -2400,7 +2400,7 @@ class BigshortsChatbot:
                     "query": "How to create a Mini"
                 },
                 {
-                    "question": "Promoto Your MINI on a SNIP",
+                    "question": "Promote Your MINI on a SNIP",
                     "content_type": "Snip to Mini",
                     "query": "How to link Snip to Mini Drama"
                 },
