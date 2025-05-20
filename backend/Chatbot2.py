@@ -2400,6 +2400,11 @@ class BigshortsChatbot:
                     "query": "How to create a Mini"
                 },
                 {
+                    "question": "Promoto Your MINI on a SNIP",
+                    "content_type": "Snip to Mini",
+                    "query": "How to link Snip to Mini Drama"
+                },
+                {
                     "question": "How to create Interactive Content ?",
                     "content_type": "Interactive snip",
                     "query": "How to create Interactive Snip"
@@ -2433,12 +2438,7 @@ class BigshortsChatbot:
                     "question": "How to change app theme ?",
                     "content_type": "Change theme",
                     "query": "How to change app theme?"
-                },
-                {
-                    "question": "How to link Snip to Mini Drama?",
-                    "content_type": "Snip to Mini",
-                    "query": "How to link Snip to Mini Drama"
-                }
+                }       
             ]
             
             # Create response dictionary with proper structure
