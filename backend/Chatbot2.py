@@ -1833,8 +1833,7 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 9,
                     "description": "Add a caption, tag friends, and click Post to share your Snip",
-                    "image_path": "Shot/Group_173.webp",
-                    
+                    "image_path": "Shot/Group_173.webp",  
                 }
             ]
         },
@@ -2435,19 +2434,19 @@ class BigshortsChatbot:
                     "content_type": "Change theme",
                     "query": "How to change app theme?"
                 },
+                {
+                    "question": "How to link Snip to Mini Drama?",
+                    "content_type": "Snip to Mini",
+                    "query": "How to link Snip to Mini Drama"
+                }
             ]
             
             # Create response dictionary with proper structure
             response = {
-                "type": "greeting_with_faqs_and_special", 
+                "type": "greeting_with_faqs", 
                 "content": {
                     "greeting": random.choice(greeting_responses),
-                    "faqs": faqs,
-                    "special_button": {
-                        "text": "Link Snip to Mini Drama",
-                        "content_type": "Snip to Mini",
-                        "query": "How to link Snip to Mini Drama"
-                    }
+                    "faqs": faqs
                 }
             }
             
@@ -2590,11 +2589,6 @@ class BigshortsChatbot:
                 # If something goes wrong, fallback to regular processing
                 pass
             
-        if user_input.startswith("FAQ: Snip to Mini") or user_input.lower() == "link snip to mini drama":
-            response = content_creation_guide("Snip to Mini")
-            self.sessions[session_id].append({"role": "assistant", "content": response})
-            return response
-
 
         def get_natural_content_phrasing(content_type: str) -> str:
             """Returns a more natural way to phrase a content type in a suggestion"""
@@ -2794,17 +2788,6 @@ def run_chatbot():
                         prompt = response.get('content', {}).get('prompt', '')
                         print(f"Bigshorts Assistant: {explanation}")
                         print(f"\n{prompt}")
-                    elif response.get("type") == "greeting_with_faqs_and_special":
-                        greeting = response.get('content', {}).get('greeting', '')
-                        print(f"Bigshorts Assistant: {greeting}")
-                        print("\nFrequently Asked Questions:")
-                        faqs = response.get('content', {}).get('faqs', [])
-                        for i, faq in enumerate(faqs):
-                            print(f"{i+1}. {faq.get('question', '')}")
-                        
-                        special_button = response.get('content', {}).get('special_button', {})
-                        print("\nSpecial Feature:")
-                        print(f"→ {special_button.get('text', '')}")
                     else:
                         print(f"Bigshorts Assistant: {response}")
                 else:
