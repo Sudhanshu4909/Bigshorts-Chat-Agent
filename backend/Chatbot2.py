@@ -2402,7 +2402,7 @@ class BigshortsChatbot:
                 {
                     "question": "Promote Your MINI on a SNIP",
                     "content_type": "Snip to Mini",
-                    "query": "How to link Snip to Mini Drama",
+                    "query": "How to link Snip to Mini Drama"
                 },
                 {
                     "question": "How to create Interactive Content ?",
@@ -2613,8 +2613,8 @@ class BigshortsChatbot:
                 }
             }
             
-    self.sessions[session_id].append({"role": "assistant", "content": bigcoins_info})
-    return bigcoins_info    
+            self.sessions[session_id].append({"role": "assistant", "content": bigcoins_info})
+            return bigcoins_info    
 
         def get_natural_content_phrasing(content_type: str) -> str:
             """Returns a more natural way to phrase a content type in a suggestion"""
