@@ -2589,7 +2589,7 @@ class BigshortsChatbot:
                                 {"action": "Snip Creation", "reward": "5 Bigcoins", "description": "Receive 5 Bigcoins for every Snip you create"},
                                 {"action": "Ssup/Shot Creation", "reward": "2 Bigcoins", "description": "Get 2 Bigcoins for each Ssup or Shot"},
                                 {"action": "Daily Activity", "reward": "2 Bigcoins", "description": "Stay active each day to earn 2 Bigcoins"},
-                                {"action": "Time Spent (5-9 mins)", "reward": "5 Bigcoins", "description": "Spend 5–9 minutes daily"},
+                                {"action": "Time Spent (5-9 mins)", "reward": "5 Bigcoins", "description": "Spend 5–9 minutes"},
                                 {"action": "Time Spent (10+ mins)", "reward": "12 Bigcoins", "description": "Spend 10 minutes or more daily"},
                                 {"action": "5-Day Streak Bonus", "reward": "20 Bigcoins", "description": "Stay active for 5 consecutive days (Streak resets if you miss a day)"}
                             ]
