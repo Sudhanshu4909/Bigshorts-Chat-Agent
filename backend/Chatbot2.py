@@ -15,7 +15,7 @@ ALLOWED_CONTENT_TYPES = [
     "saved posts", "edit profile", "edit post", "block/unblock user", 
     "hide/unhide users", "messages", "discovery", "editing a ssup", 
     "interactive snip", "Mini", "create a playlist", "editing a Mini", 
-    "editing a snip", "Mini Drama series", "Edit Mini Drama series", "Ssup repost","Snip to Mini" 
+    "editing a snip", "Mini Drama series", "Edit Mini Drama series", "Ssup repost","Snip to Mini", "bigcoins_reward"
 ]
 ALLOWED_ISSUE_TYPES = [
     "login", "upload", "notification", "privacy", 
@@ -2577,6 +2577,27 @@ class BigshortsChatbot:
             try:
                 selected_content_type = user_input.split("FAQ:")[1].strip()
                 
+                # Special handling for bigcoins reward system
+                if selected_content_type == "bigcoins_reward":
+                    bigcoins_info = {
+                        "type": "bigcoins_reward_system",
+                        "content": {
+                            "title": "Bigcoins Reward System",
+                            "rewards": [
+                                {"action": "Registration", "reward": "10 Bigcoins", "description": "Get 10 Bigcoins when you sign up"},
+                                {"action": "Mini Upload", "reward": "10 Bigcoins", "description": "Earn 10 Bigcoins for uploading a Mini"},
+                                {"action": "Snip Creation", "reward": "5 Bigcoins", "description": "Receive 5 Bigcoins for every Snip you create"},
+                                {"action": "Ssup/Shot Creation", "reward": "2 Bigcoins", "description": "Get 2 Bigcoins for each Ssup or Shot"},
+                                {"action": "Daily Activity", "reward": "2 Bigcoins", "description": "Stay active each day to earn 2 Bigcoins"},
+                                {"action": "Time Spent (5-9.9 min)", "reward": "5 Bigcoins", "description": "Spend 5–9.9 minutes daily"},
+                                {"action": "Time Spent (10+ min)", "reward": "12 Bigcoins", "description": "Spend 10 minutes or more daily"},
+                                {"action": "5-Day Streak Bonus", "reward": "20 Bigcoins", "description": "Stay active for 5 consecutive days (Streak resets if you miss a day)"}
+                            ]
+                        }
+                    }
+                    self.sessions[session_id].append({"role": "assistant", "content": bigcoins_info})
+                    return bigcoins_info
+                
                 # If it's an issue, handle it as an issue
                 if any(issue_type in selected_content_type.lower() for issue_type in ALLOWED_ISSUE_TYPES):
                     issue_type = next((issue for issue in ALLOWED_ISSUE_TYPES if issue in selected_content_type.lower()), None)
@@ -2593,28 +2614,6 @@ class BigshortsChatbot:
                 print(f"Error handling FAQ selection: {str(e)}")
                 # If something goes wrong, fallback to regular processing
                 pass
-            
-            
-        if user_input.strip() == "Bigcoins Reward System" or "bigcoins" in user_input.lower():
-            bigcoins_info = {
-                "type": "bigcoins_reward_system",
-                "content": {
-                    "title": "Bigcoins Reward System",
-                    "rewards": [
-                        {"action": "Registration", "reward": "10 Bigcoins", "description": "Get 10 Bigcoins when you sign up"},
-                        {"action": "Mini Upload", "reward": "10 Bigcoins", "description": "Earn 10 Bigcoins for uploading a Mini"},
-                        {"action": "Snip Creation", "reward": "5 Bigcoins", "description": "Receive 5 Bigcoins for every Snip you create"},
-                        {"action": "Ssup/Shot Creation", "reward": "2 Bigcoins", "description": "Get 2 Bigcoins for each Ssup or Shot"},
-                        {"action": "Daily Activity", "reward": "2 Bigcoins", "description": "Stay active each day to earn 2 Bigcoins"},
-                        {"action": "Time Spent (5-9.9 min)", "reward": "5 Bigcoins", "description": "Spend 5–9.9 minutes daily"},
-                        {"action": "Time Spent (10+ min)", "reward": "12 Bigcoins", "description": "Spend 10 minutes or more daily"},
-                        {"action": "5-Day Streak Bonus", "reward": "20 Bigcoins", "description": "Stay active for 5 consecutive days (Streak resets if you miss a day)"}
-                    ]
-                }
-            }
-            
-            self.sessions[session_id].append({"role": "assistant", "content": bigcoins_info})
-            return bigcoins_info    
 
         def get_natural_content_phrasing(content_type: str) -> str:
             """Returns a more natural way to phrase a content type in a suggestion"""
