@@ -170,7 +170,7 @@ def get_session_chatbot(session_id):
         
         # Create a new chatbot for this session
         try:
-            chatbot = BigshortsChatbot(MODEL_PATH)
+            chatbot = BigShortsChatbot(MODEL_PATH)
             chatbot_instances[session_id] = chatbot
             last_access[session_id] = datetime.now()
             return chatbot
