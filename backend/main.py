@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import Union, Dict, List, Any, Optional
 import os
 import uvicorn
-from Chatbot2 import BigshortsChatbot
+from Chatbot2 import BigShortsChatbot
 import asyncio
 import traceback
 import json
