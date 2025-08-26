@@ -1,4 +1,4 @@
-# Complete Bigshorts chatbot using local LLM with all original tools and functionality
+# Complete BigShorts chatbot using local LLM with all original tools and functionality
 from llama_cpp import Llama
 import yaml
 from typing import Dict, List, Union
@@ -15,7 +15,7 @@ ALLOWED_CONTENT_TYPES = [
     "saved posts", "edit profile", "edit post", "block/unblock user", 
     "hide/unhide users", "messages", "discovery", "editing a ssup", 
     "interactive snip", "Mini", "create a playlist", "editing a Mini", 
-    "editing a snip", "Mini Drama series", "Edit Mini Drama series", "Ssup repost","Snip to Mini", "bigcoins_reward"
+    "editing a snip", "Mini Series", "Edit Mini Series", "Ssup repost","Snip to Mini", "bigcoins_reward"
 ]
 ALLOWED_ISSUE_TYPES = [
     "login", "upload", "notification", "privacy", 
@@ -208,8 +208,8 @@ CONTENT_TYPE_MAPPING = {
     "how to add friends": "invite friends",
     "How to invite friends": "invite friends",
     "How do i invite my friends": "invite friends",
-    "How do i Share bigshorts": "invite friends",
-    "How to invite friends on Bigshorts": "invite friends",
+    "How do i Share BigShorts": "invite friends",
+    "How to invite friends on BigShorts": "invite friends",
     
     # FEEDBACK mappings
     "give feedback": "feedback", 
@@ -418,35 +418,35 @@ CONTENT_TYPE_MAPPING = {
     "how to search": "discovery",
     
     # CREATE A PLAYLIST mappings
-    "playlist": "Mini Drama series", 
-    "series": "Mini Drama series", 
-    "collection": "Mini Drama series",
-    "create playlist": "Mini Drama series",
-    "make playlist": "Mini Drama series",
-    "how to make playlist": "Mini Drama series",
-    "how to create playlist": "Mini Drama series",
-    "how to make playlist": "Mini Drama series",
-    "how to create a Mini Drama series": "Mini Drama series",
-    "how to make a playlist": "Mini Drama series",
+    "playlist": "Mini Series", 
+    "series": "Mini Series", 
+    "collection": "Mini Series",
+    "create playlist": "Mini Series",
+    "make playlist": "Mini Series",
+    "how to make playlist": "Mini Series",
+    "how to create playlist": "Mini Series",
+    "how to make playlist": "Mini Series",
+    "how to create a Mini Series": "Mini Series",
+    "how to make a playlist": "Mini Series",
 
 
     #EDIT A PLAYLIST mappings
-    "edit playlist": "Edit Mini Drama series",
-    "modify playlist": "Edit Mini Drama series",
-    "update playlist": "Edit Mini Drama series",
-    "change playlist": "Edit Mini Drama series",
-    "how to edit playlist": "Edit Mini Drama series",
-    "how to modify playlist": "Edit Mini Drama series",
-    "how to update playlist": "Edit Mini Drama series",
-    "how to change playlist": "Edit Mini Drama series",
-    "edit Mini Drama series": "Edit Mini Drama series",
-    "modify Mini Drama series": "Edit Mini Drama series",
-    "update Mini Drama series": "Edit Mini Drama series",
-    "change Mini Drama series": "Edit Mini Drama series",
-    "how to edit Mini Drama series": "Edit Mini Drama series",
-    "how to modify Mini Drama series": "Edit Mini Drama series",
-    "how to update Mini Drama series": "Edit Mini Drama series",
-    "how to change Mini Drama series": "Edit Mini Drama series",
+    "edit playlist": "Edit Mini Series",
+    "modify playlist": "Edit Mini Series",
+    "update playlist": "Edit Mini Series",
+    "change playlist": "Edit Mini Series",
+    "how to edit playlist": "Edit Mini Series",
+    "how to modify playlist": "Edit Mini Series",
+    "how to update playlist": "Edit Mini Series",
+    "how to change playlist": "Edit Mini Series",
+    "edit Mini Series": "Edit Mini Series",
+    "modify Mini Series": "Edit Mini Series",
+    "update Mini Series": "Edit Mini Series",
+    "change Mini Series": "Edit Mini Series",
+    "how to edit Mini Series": "Edit Mini Series",
+    "how to modify Mini Series": "Edit Mini Series",
+    "how to update Mini Series": "Edit Mini Series",
+    "how to change Mini Series": "Edit Mini Series",
 
     #SSUP Repost mappings
     "ssup repost": "Ssup repost",
@@ -563,7 +563,7 @@ def handle_common_issues(issue_type: str) -> str:
         "app": "For app performance issues:\n1. Close background apps\n2. Free up device storage\n3. Update to the latest version\n4. Reinstall the app if problems persist",
         "video": "For video playback issues:\n1. Check your internet connection\n2. Clear Application cache\n3. Reduce video quality in Settings > Data Usage",
         "audio": "For audio issues:\n1. Check device volume\n2. Toggle device mute switch\n3. Check if headphones are properly connected\n4. Restart the app",
-        "connection": "For connection issues:\n1. Switch between WiFi and mobile data\n2. Toggle airplane mode\n3. Restart your router\n4. Check if Bigshorts servers are down",
+        "connection": "For connection issues:\n1. Switch between WiFi and mobile data\n2. Toggle airplane mode\n3. Restart your router\n4. Check if BigShorts servers are down",
         "quality": "For content quality issues:\n1. Upload original high-quality files\n2. Check internet bandwidth\n3. Wait for processing to complete\n4. Adjust quality settings in the app",
         "blocking": "For blocking issues:\n1. Go to Me > hamburger menu > Blocked Users\n2. Find the user you want to unblock\n3. Tap Unblock\n4. For new blocks, go to the user's profile and select Block",
         "reporting": "For reporting issues:\n1. Find the content you want to report\n2. Tap the three dots\n3. Select Report\n4. Choose the appropriate category\n5. Add details and submit",
@@ -597,7 +597,7 @@ def generate_interactive_video_ideas() -> str:
     return f"Here's an interactive idea for your Snip: {selected_idea}"
 
 def content_creation_guide(content_type: str) -> dict:
-    """Provides detailed guidance about different types of content creation on Bigshorts
+    """Provides detailed guidance about different types of content creation on BigShorts
     Args:
         content_type: The type of content user wants to create (e.g., 'SHOT', 'SNIP', 'ssup', 'collab')
     Returns:
@@ -641,11 +641,11 @@ def content_creation_guide(content_type: str) -> dict:
     
     guides = {
         "shot": {
-            "title": "Creating a Bigshorts SHOT",
+            "title": "Creating a BigShorts SHOT",
             "steps": [
                 {
                     "step": 1,
-                    "description": "Open the Bigshorts app and tap the Creation Button",
+                    "description": "Open the BigShorts app and tap the Creation Button",
                     "image_path": "Shot/Group_1449.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
@@ -664,7 +664,7 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 4,
-                    "description": "Edit your SHOT using Bigshorts tools",
+                    "description": "Edit your SHOT using BigShorts tools",
                     "image_path": "Shot/Group_1452.webp",
                     "tips": "Try our AI-powered filters and effects"
                 },
@@ -677,11 +677,11 @@ def content_creation_guide(content_type: str) -> dict:
             ],
         },
         "ssup": {
-            "title": "Creating a Bigshorts SSUP",
+            "title": "Creating a BigShorts SSUP",
             "steps": [
                 {
                     "step": 1,
-                    "description": "Open the Bigshorts app and tap the Creation Button",
+                    "description": "Open the BigShorts app and tap the Creation Button",
                     "image_path": "Shot/Group_1439.webp",
                    
                 },
@@ -699,7 +699,7 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 4,
-                    "description": "Edit your SSUP using Bigshorts tools and tap done",
+                    "description": "Edit your SSUP using BigShorts tools and tap done",
                     "image_path": "Shot/Group_1442.webp",
                     "tips": "Try our AI-powered filters and effects"
                     
@@ -714,11 +714,11 @@ def content_creation_guide(content_type: str) -> dict:
             ],
         },
         "snip": {
-            "title": "Creating a Bigshorts SNIP",
+            "title": "Creating a BigShorts SNIP",
             "steps": [
                 {
                     "step": 1,
-                    "description": "Open the Bigshorts app and tap the Creation Button",
+                    "description": "Open the BigShorts app and tap the Creation Button",
                     "image_path": "Shot/Group_1444.webp",
                     "tips": "Ensure stable internet connection"
                 },
@@ -734,7 +734,7 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 4,
-                    "description": "Edit your SNIP using Bigshorts tools and tap done",
+                    "description": "Edit your SNIP using BigShorts tools and tap done",
                     "image_path": "Shot/Group_1447.webp",
                 },
                 {
@@ -787,7 +787,7 @@ def content_creation_guide(content_type: str) -> dict:
             ],
         },
         "Editing a shot": {
-            "title": "Editing a Bigshorts SHOT",
+            "title": "Editing a BigShorts SHOT",
             "steps": [
                 {
                     "step": 1,
@@ -1458,7 +1458,7 @@ def content_creation_guide(content_type: str) -> dict:
             "steps": [
                 {
                     "step": 1,
-                    "description": "Open the Bigshorts app and tap the Creation Button",
+                    "description": "Open the BigShorts app and tap the Creation Button",
                     "image_path": "Shot/Group_1557.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
@@ -1491,18 +1491,18 @@ def content_creation_guide(content_type: str) -> dict:
                 }
             ]
         },
-        "Mini Drama series": {
-            "title": "Creating a Mini Drama series",
+        "Mini Series": {
+            "title": "Creating a Mini Series",
             "steps": [
                 {
                     "step": 1,
-                    "description": "On Me section, Tap on the Create Mini Drama Series",
+                    "description": "On Me section, Tap on the Create Mini Series",
                     "image_path": "Shot/Group_1576.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
                 {
                     "step": 2,
-                    "description": "Select a cover image for the Mini Drama series.",
+                    "description": "Select a cover image for the Mini Series.",
                     "image_path": "Shot/Group_1577.webp",
                     
                 },
@@ -1526,13 +1526,13 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 6,
-                    "description": "And then click on Create Mini drama series (highlighted in red)",
+                    "description": "And then click on Create Mini Series (highlighted in red)",
                     "image_path": "Shot/Group_1581.webp",
                     
                 },
                 {
                     "step": 7,
-                    "description": "Select desired number of Mini that you want to add to Mini Drama series",
+                    "description": "Select desired number of Mini that you want to add to Mini Series",
                     "image_path": "Shot/Group_1582.webp",
                     
                 },
@@ -1544,7 +1544,7 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 9,
-                    "description": "Viola! your mini drama series is created!",
+                    "description": "Viola! your Mini Series is created!",
                     "image_path": "Shot/Group_1584.webp",
                     
                 }
@@ -1555,7 +1555,7 @@ def content_creation_guide(content_type: str) -> dict:
             "steps": [
                 {
                     "step": 1,
-                    "description": "Open the Bigshorts app and tap the Creation Button",
+                    "description": "Open the BigShorts app and tap the Creation Button",
                     "image_path": "Shot/Group_1563.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
@@ -1705,12 +1705,12 @@ def content_creation_guide(content_type: str) -> dict:
                 }
             ]
         },
-        "Edit Mini Drama series": {
-            "title": "Editing a Mini Drama series",
+        "Edit Mini Series": {
+            "title": "Editing a Mini Series",
             "steps": [
                 {
                     "step": 1,
-                    "description": "In Me section, Tap on the Mini Drama Series icon (highlighted in yellow), and tap on the mini drama series you want to edit (highlighted in red)",
+                    "description": "In Me section, Tap on the Mini Series icon (highlighted in yellow), and tap on the Mini Series you want to edit (highlighted in red)",
                     "image_path": "Shot/Group_1585.webp",
                     "tips": "Make sure you're on the latest app version for all features"
                 },
@@ -1722,13 +1722,13 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 3,
-                    "description": "Tap on edit on Mini Drama Series",
+                    "description": "Tap on edit on Mini Series",
                     "image_path": "Shot/Group_1587.webp",
                     
                 },
                 {
                     "step": 4,
-                    "description": "Edit the cover image, season title or description and click on Edit Mini Drama Series",
+                    "description": "Edit the cover image, season title or description and click on Edit Mini Series",
                     "image_path": "Shot/Group_1588.webp",
                     
                 },
@@ -1949,9 +1949,9 @@ def get_off_topic_response() -> str:
     responses = [
         "I'm your assistant, Gyan.Ai I can help you create amazing content (SHOT, SNIP, SSUP, MINI), troubleshoot any platform issues, or discover trending content. What would you like to explore today?",
         
-        "Let's focus on making your Bigshorts experience amazing! I can guide you through creating content, solve platform issues, or show you what's trending. How can I enhance your Bigshorts journey today?",
+        "Let's focus on making your BigShorts experience amazing! I can guide you through creating content, solve platform issues, or show you what's trending. How can I enhance your BigShorts journey today?",
         
-        "Welcome to Bigshorts support! I'm here to help you create standout content, fix any platform issues, or discover what's trending. What aspect of Bigshorts would you like assistance with?",
+        "Welcome to BigShorts support! I'm here to help you create standout content, fix any platform issues, or discover what's trending. What aspect of BigShorts would you like assistance with?",
         
         "As your assistant Gyan.Ai, I can help you create stunning SHOT photos, viral SNIP videos, engaging SSUP stories, or collaborative content. I can also troubleshoot any platform issues. What interests you most?"
     ]
@@ -2023,13 +2023,13 @@ def suggest_trending_content(content_type: str = "all") -> dict:
     return {
         "type": "suggestion_buttons",
         "content": {
-            "message": "Check out what's trending on Bigshorts! 📈",
+            "message": "Check out what's trending on BigShorts! 📈",
             "buttons": buttons
         }
     }
 
 # Integrating all tools into a cohesive chatbot with local LLM
-class BigshortsChatbot:
+class BigShortsChatbot:
     def __init__(self, model_path):
         """Initialize the chatbot with a local LLM model"""
         print(f"Loading model from {model_path}...")
@@ -2056,7 +2056,7 @@ class BigshortsChatbot:
             print("Warning: prompts.yaml not found or invalid, using default prompts")
             self.prompt_templates = {
                 "final_answer": {
-                    "pre_messages": "You are a helpful social media assistant for the Bigshorts platform. Focus on helping users with platform features.",
+                    "pre_messages": "You are a helpful social media assistant for the BigShorts platform. Focus on helping users with platform features.",
                     "post_messages": "Remember to never show your reasoning or thought process to the user."
                 }
             }
@@ -2078,7 +2078,7 @@ class BigshortsChatbot:
         # Define predefined responses
         self.unsupported_query_response = {
             "type": "error",
-            "content": "I can only help with Bigshorts platform features like creating SHOT, SNIP, SSUP or Collab content, and handling common issues. How can I assist you with the platform?"
+            "content": "I can only help with BigShorts platform features like creating SHOT, SNIP, SSUP or Collab content, and handling common issues. How can I assist you with the platform?"
         }
 
         
@@ -2091,14 +2091,14 @@ class BigshortsChatbot:
     
             # New content types
             "editing a shot": "Our platform offers powerful tools to edit your SHOT photos, including filters, effects, adjustments, and more.",
-            "invite friends": "You can easily invite friends to join you on Bigshorts and grow your network.",
+            "invite friends": "You can easily invite friends to join you on BigShorts and grow your network.",
             "feedback": "We value your input! You can submit feedback about the platform to help us improve.",
-            "multiple accounts": "Bigshorts allows you to manage multiple accounts and easily switch between them.",
-            "account overview": "Account overview provides analytics and statistics about your Bigshorts performance.",
+            "multiple accounts": "BigShorts allows you to manage multiple accounts and easily switch between them.",
+            "account overview": "Account overview provides analytics and statistics about your BigShorts performance.",
             "store draft": "The draft feature lets you save content you're working on to finish and publish later.",
             "change password": "You can easily update your password to keep your account secure.",
             "notification": "Notifications keep you updated about activities related to your account and content.",
-            "change theme": "Personalize your Bigshorts experience by choosing from different app themes.",
+            "change theme": "Personalize your BigShorts experience by choosing from different app themes.",
             "report": "The reporting feature helps maintain community standards by flagging inappropriate content.",
             "moment": "Moments let you curate and showcase collections of your archived content on your profile.",
             "delete post": "You can remove any of your content from the platform if you no longer want it visible.",
@@ -2108,7 +2108,7 @@ class BigshortsChatbot:
             "edit post": "You can modify your existing posts to update captions, tags, or other details.",
             "block/unblock user": "Blocking prevents specific users from interacting with you or seeing your content.",
             "hide/unhide users": "Hiding users removes their content from your feed without blocking them completely.",
-            "messages": "Our direct messaging system lets you chat privately with other Bigshorts users.",
+            "messages": "Our direct messaging system lets you chat privately with other BigShorts users.",
             "discovery": "The discovery page helps you find new content, creators, and trending topics.",
             "editing a ssup": "You can enhance your SSUP stories with various editing tools, effects, and interactive elements.",
             "interactive snip": "Interactive SNIPs allow viewers to engage with your videos through buttons and other clickable elements.",
@@ -2117,7 +2117,7 @@ class BigshortsChatbot:
             "editing a Mini": "Our Mini editing tools help you create professional-quality longer videos.",
             "editing a snip": "SNIP editing features let you create polished, engaging short-form videos.",
             "moment": "Moments are collections of your archived SSUPs (stories) that you can showcase permanently on your profile - similar to Story Highlights on other platforms. They let you Group_and save your temporary SSUP content into themed collections that won't disappear after 24 hours.",
-            "Snip to Mini": "Linking Mini Dramas to Snips lets you create interactive short videos that lead viewers to your longer Mini content. This feature helps drive traffic to your Mini Drama series and increases engagement."
+            "Snip to Mini": "Linking Mini Dramas to Snips lets you create interactive short videos that lead viewers to your longer Mini content. This feature helps drive traffic to your Mini Series and increases engagement."
         }
     
     def format_history(self, session_id):
@@ -2154,7 +2154,7 @@ class BigshortsChatbot:
         
         # Then check for on-topic indicators
         on_topic_indicators = ALLOWED_CONTENT_TYPES + ALLOWED_ISSUE_TYPES + ALLOWED_PLATFORM_SECTIONS + [
-            "bigshorts", "platform", "app", "create", "upload", "share", "post"
+            "BigShorts", "platform", "app", "create", "upload", "share", "post"
         ]
         
         if any(indicator in query.lower() for indicator in on_topic_indicators):
@@ -2218,7 +2218,7 @@ class BigshortsChatbot:
         
         # If we've stripped everything, use a fallback response
         if not cleaned.strip():
-            return "I can help you with Bigshorts platform features. What would you like to know about SHOT, SNIP, SSUP, or Collab content?"
+            return "I can help you with BigShorts platform features. What would you like to know about SHOT, SNIP, SSUP, or Collab content?"
         
         # Remove any extra whitespace and normalize
         cleaned = re.sub(r'\n\s*\n', '\n\n', cleaned)
@@ -2234,7 +2234,7 @@ class BigshortsChatbot:
             if len(self.sessions[session_id]) < 2:
                 return {
                     "type": "message", 
-                    "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, Mini, or any other Bigshorts feature."
+                    "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, Mini, or any other BigShorts feature."
                 }
             
             # Get the previous assistant message
@@ -2274,7 +2274,7 @@ class BigshortsChatbot:
             # Fallback response if no specific content type is found
             return {
                 "type": "message", 
-                "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, Mini, or any other Bigshorts feature."
+                "content": "I'd be happy to help! What specifically would you like guidance on? You can ask about SHOT, SNIP, SSUP, Mini, or any other BigShorts feature."
             }
         
         except Exception as e:
@@ -2284,7 +2284,7 @@ class BigshortsChatbot:
             # Provide a detailed fallback response
             return {
                 "type": "message", 
-                "content": "I apologize, but I'm having trouble understanding your 'yes' response. Could you please specify which Bigshorts feature you're interested in? Some options include SHOT, SNIP, SSUP, Mini, or Collab."
+                "content": "I apologize, but I'm having trouble understanding your 'yes' response. Could you please specify which BigShorts feature you're interested in? Some options include SHOT, SNIP, SSUP, Mini, or Collab."
             }
 
     def _is_user_search_query(self, query: str) -> bool:
@@ -2312,7 +2312,7 @@ class BigshortsChatbot:
         history = self.format_history(session_id)
     
         # Format prompt with conversation history for context (Mistral format)
-        prompt = f"<s>[INST] {system_prompt}\n\nConversation history:\n{history}\n\nUser's question: {query}\n\nProvide a helpful response about the Bigshorts platform: [/INST]"
+        prompt = f"<s>[INST] {system_prompt}\n\nConversation history:\n{history}\n\nUser's question: {query}\n\nProvide a helpful response about the BigShorts platform: [/INST]"
     
         try:
             # Generate response with the model
@@ -2331,7 +2331,7 @@ class BigshortsChatbot:
         
         except Exception as e:
             print(f"LLM error: {str(e)}")
-            return f"I encountered a technical issue. Can I help you with creating content on Bigshorts instead?"
+            return f"I encountered a technical issue. Can I help you with creating content on BigShorts instead?"
             
     
     def process_query(self, user_input: str) -> Union[str, dict]:
@@ -2361,36 +2361,36 @@ class BigshortsChatbot:
 
         if user_input.lower().strip() in greetings:
             greeting_responses = [
-                "Hello! 😀 Welcome to Bigshorts! Ready to create some awesome content today?",
-                "Hey there! 😃 The Bigshorts community has been buzzing with creativity. What would you like to create today?",
-                "Hi! 😊 Looking to make a SHOT, SNIP, SSUP, or MINI on Bigshorts today?",
-                "Greetings! 👋 Your Bigshorts assistant Gyan.Ai is ready to help you shine on the platform!",
-                "Wassup! 😎 Ready to level up your Bigshorts content? I can help with SHOT, SNIP, SSUP, or MINI!",
-                "Hey! 🚀 Trending content on Bigshorts is getting millions of views today. Want to create something awesome?",
-                "Hello there! 🤗 What type of Bigshorts content are you looking to create today?",
-                "Hi! ✨ Your Bigshorts creative journey starts here - what can I help you with?",
-                "Hey! 🔥 The best Bigshorts creators start with great ideas. Need help creating your next viral content?",
-                "What's up! 🎬 Bigshorts is waiting for your amazing content. Need help getting started?",
-                "Yo! 🎤 Ready to make some fire content on Bigshorts? I'm here to help!",
-                "Hiya! 🎉 Bigshorts creators are killing it today! Want to join them?",
-                "G'day! 🌞 Let's make your Bigshorts profile stand out with some amazing content!",
-                "Good morning! ☀️ Start your day with some fresh Bigshorts content creation!",
-                "Good afternoon! 🌤 Perfect time to create some Bigshorts content that will trend tonight!",
-                "Good evening! 🌙 Night time is prime time for Bigshorts engagement. Need help creating content?",
-                "Howdy! 🤠 Your Bigshorts creative partner is here to assist with any content needs!",
-                "Bonjour! 🇫🇷 Bigshorts is going global, and I'm here to help you create content that connects!",
-                "Aloha! 🌺 Bring some sunshine to Bigshorts with your next SHOT, SNIP, SSUP, or MINI!",
-                "Heya! 🎨 The Bigshorts algorithm loves fresh content. What would you like to create today?",
-                "Sup! 🏆 Bigshorts is all about authentic content. Need help making yours stand out?",
-                "How's it going? 💡 Ready to explore some creative ideas for your next Bigshorts post?",
-                "What's happening! 🚀 Bigshorts is buzzing today. Let's get your content in the mix!",
-                "How are you? 💬 However you're feeling, expressing it through Bigshorts content can connect with others!",
-                "Ciao! 🇮🇹 Style and substance make the best Bigshorts content. Need help with either?",
-                "What's good! 🏅 The best Bigshorts creators post consistently. Ready to plan your next content piece?",
-                "Hi there! 🎭 Discover what's trending on Bigshorts or create something completely new!",
-                "Hey hey! 🎬 Your Bigshorts assistant Gyan.Ai is ready to help with SHOT photos, SNIP videos, SSUP stories, or MINI!",
-                "Yo yo! 🚀 Bigshorts creators are changing the game! Want to join the revolution?",
-                "How are things? 🛠 Whether you need help with Bigshorts creation or troubleshooting, I've got you covered!"
+                "Hello! 😀 Welcome to BigShorts! Ready to create some awesome content today?",
+                "Hey there! 😃 The BigShorts community has been buzzing with creativity. What would you like to create today?",
+                "Hi! 😊 Looking to make a SHOT, SNIP, SSUP, or MINI on BigShorts today?",
+                "Greetings! 👋 Your BigShorts assistant Gyan.Ai is ready to help you shine on the platform!",
+                "Wassup! 😎 Ready to level up your BigShorts content? I can help with SHOT, SNIP, SSUP, or MINI!",
+                "Hey! 🚀 Trending content on BigShorts is getting millions of views today. Want to create something awesome?",
+                "Hello there! 🤗 What type of BigShorts content are you looking to create today?",
+                "Hi! ✨ Your BigShorts creative journey starts here - what can I help you with?",
+                "Hey! 🔥 The best BigShorts creators start with great ideas. Need help creating your next viral content?",
+                "What's up! 🎬 BigShorts is waiting for your amazing content. Need help getting started?",
+                "Yo! 🎤 Ready to make some fire content on BigShorts? I'm here to help!",
+                "Hiya! 🎉 BigShorts creators are killing it today! Want to join them?",
+                "G'day! 🌞 Let's make your BigShorts profile stand out with some amazing content!",
+                "Good morning! ☀️ Start your day with some fresh BigShorts content creation!",
+                "Good afternoon! 🌤 Perfect time to create some BigShorts content that will trend tonight!",
+                "Good evening! 🌙 Night time is prime time for BigShorts engagement. Need help creating content?",
+                "Howdy! 🤠 Your BigShorts creative partner is here to assist with any content needs!",
+                "Bonjour! 🇫🇷 BigShorts is going global, and I'm here to help you create content that connects!",
+                "Aloha! 🌺 Bring some sunshine to BigShorts with your next SHOT, SNIP, SSUP, or MINI!",
+                "Heya! 🎨 The BigShorts algorithm loves fresh content. What would you like to create today?",
+                "Sup! 🏆 BigShorts is all about authentic content. Need help making yours stand out?",
+                "How's it going? 💡 Ready to explore some creative ideas for your next BigShorts post?",
+                "What's happening! 🚀 BigShorts is buzzing today. Let's get your content in the mix!",
+                "How are you? 💬 However you're feeling, expressing it through BigShorts content can connect with others!",
+                "Ciao! 🇮🇹 Style and substance make the best BigShorts content. Need help with either?",
+                "What's good! 🏅 The best BigShorts creators post consistently. Ready to plan your next content piece?",
+                "Hi there! 🎭 Discover what's trending on BigShorts or create something completely new!",
+                "Hey hey! 🎬 Your BigShorts assistant Gyan.Ai is ready to help with SHOT photos, SNIP videos, SSUP stories, or MINI!",
+                "Yo yo! 🚀 BigShorts creators are changing the game! Want to join the revolution?",
+                "How are things? 🛠 Whether you need help with BigShorts creation or troubleshooting, I've got you covered!"
             ]
 
             faqs = [
@@ -2505,7 +2505,7 @@ class BigshortsChatbot:
         if self._is_user_search_query(user_input):
             response = {
                 "type": "message", 
-                "content": "I'm here to help with Bigshorts features. I cannot access user data or find specific profiles. What would you like to know about creating content?"
+                "content": "I'm here to help with BigShorts features. I cannot access user data or find specific profiles. What would you like to know about creating content?"
             }
             self.sessions[session_id].append({"role": "assistant", "content": response})
             return response
@@ -2522,7 +2522,7 @@ class BigshortsChatbot:
                     "App Settings": ["notification", "change theme", "feedback", "invite friends", "report", "hide/unhide users"]
                 }
             
-                category_response = "Here are the Bigshorts features I can help you with:\n\n"
+                category_response = "Here are the BigShorts features I can help you with:\n\n"
                 for category, features in categories.items():
                     category_response += f"**{category}**\n"
                     category_response += ", ".join([f.upper() for f in features]) + "\n\n"
@@ -2556,11 +2556,11 @@ class BigshortsChatbot:
         content_type = detect_content_type(user_input)
 
 
-        if content_type == "none" and "bigshorts" in user_input.lower():
-            # Generate a generic response about Bigshorts rather than defaulting to a specific guide
+        if content_type == "none" and "BigShorts" in user_input.lower():
+            # Generate a generic response about BigShorts rather than defaulting to a specific guide
             generic_response = {
                 "type": "message",
-                "content": "I see you're asking about Bigshorts! I can help you with creating content (SHOT, SNIP, SSUP, Mini), managing your account, using platform features, or troubleshooting issues. What specific aspect of Bigshorts would you like to know more about?"
+                "content": "I see you're asking about BigShorts! I can help you with creating content (SHOT, SNIP, SSUP, Mini), managing your account, using platform features, or troubleshooting issues. What specific aspect of BigShorts would you like to know more about?"
             }
             self.sessions[session_id].append({"role": "assistant", "content": generic_response})
             return generic_response
@@ -2647,7 +2647,7 @@ class BigshortsChatbot:
                 "editing a ssup": "edit a SSUP",
                 "interactive snip": "create an interactive SNIP",
                 "Mini": "create a Mini",
-                "create a playlist": "Mini Drama series",
+                "create a playlist": "Mini Series",
                 "editing a Mini": "edit a Mini",
                 "editing a snip": "edit a SNIP"
             }
@@ -2768,15 +2768,15 @@ def run_chatbot():
         return
     
     try:
-        chatbot = BigshortsChatbot(model_path)
+        chatbot = BigShortsChatbot(model_path)
         
-        print("Bigshorts Assistant: Hi! I'm your assistant, Gyan.Ai I can help with creating SHOT, SNIP, SSUP, or Collab content. How can I assist you today?")
+        print("BigShorts Assistant: Hi! I'm your assistant, Gyan.Ai I can help with creating SHOT, SNIP, SSUP, or Collab content. How can I assist you today?")
         
         while True:
             try:
                 user_input = input("You: ")
                 if user_input.lower() in ["exit", "quit", "bye"]:
-                    print("Bigshorts Assistant: Thanks for chatting! Have a great day!")
+                    print("BigShorts Assistant: Thanks for chatting! Have a great day!")
                     break
                     
                 response = chatbot.process_query(user_input)
@@ -2784,43 +2784,43 @@ def run_chatbot():
                 # Handle different response types
                 if isinstance(response, dict):
                     if response.get("type") == "message":
-                        print(f"Bigshorts Assistant: {response.get('content')}")
+                        print(f"BigShorts Assistant: {response.get('content')}")
                     elif response.get("type") == "content_guide":
-                        print(f"Bigshorts Assistant: Here's a guide for {response.get('content', {}).get('title', 'content creation')}!")
+                        print(f"BigShorts Assistant: Here's a guide for {response.get('content', {}).get('title', 'content creation')}!")
                         print("(Visual guide displayed)")
                     elif response.get("type") == "combined":
-                        print(f"Bigshorts Assistant: {response.get('content', {}).get('message', '')}")
+                        print(f"BigShorts Assistant: {response.get('content', {}).get('message', '')}")
                         print("(Trending content suggestions displayed)")
                     elif response.get("type") == "suggestion_buttons":
-                        print(f"Bigshorts Assistant: {response.get('content', {}).get('message', '')}")
+                        print(f"BigShorts Assistant: {response.get('content', {}).get('message', '')}")
                         buttons = response.get('content', {}).get('buttons', [])
                         for button in buttons:
                             print(f"- {button.get('text', '')}")
                     elif response.get("type") == "suggestion":
-                        print(f"Bigshorts Assistant: {response.get('content', '')}")
+                        print(f"BigShorts Assistant: {response.get('content', '')}")
                     elif response.get("type") == "issue":
-                        print(f"Bigshorts Assistant: {response.get('content', '')}")
+                        print(f"BigShorts Assistant: {response.get('content', '')}")
                     elif response.get("type") == "idea":
-                        print(f"Bigshorts Assistant: {response.get('content', '')}")
+                        print(f"BigShorts Assistant: {response.get('content', '')}")
                     elif response.get("type") == "error":
-                        print(f"Bigshorts Assistant: {response.get('content', '')}")
+                        print(f"BigShorts Assistant: {response.get('content', '')}")
                     elif response.get("type") == "content_explanation":
                         explanation = response.get('content', {}).get('explanation', '')
-                        print(f"Bigshorts Assistant: {explanation}")
+                        print(f"BigShorts Assistant: {explanation}")
                         print("\nWould you like to see a detailed step-by-step guide for creating this content?")
                     elif response.get("type") == "content_explanation_with_guide_prompt":
                         explanation = response.get('content', {}).get('explanation', '')
                         prompt = response.get('content', {}).get('prompt', '')
-                        print(f"Bigshorts Assistant: {explanation}")
+                        print(f"BigShorts Assistant: {explanation}")
                         print(f"\n{prompt}")
                     else:
-                        print(f"Bigshorts Assistant: {response}")
+                        print(f"BigShorts Assistant: {response}")
                 else:
-                    print(f"Bigshorts Assistant: {response}")
+                    print(f"BigShorts Assistant: {response}")
                     
             except Exception as e:
                 print(f"Error: {str(e)}")
-                print("Bigshorts Assistant: I'm sorry, I ran into a technical issue. How else can I help with Bigshorts features?")
+                print("BigShorts Assistant: I'm sorry, I ran into a technical issue. How else can I help with BigShorts features?")
     
     except Exception as e:
         print(f"Fatal error initializing chatbot: {str(e)}")
