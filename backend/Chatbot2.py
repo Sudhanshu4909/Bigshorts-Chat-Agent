@@ -681,31 +681,25 @@ def content_creation_guide(content_type: str) -> dict:
             "steps": [
                 {
                     "step": 1,
-                    "description": "Open the BigShorts app and tap the Creation Button",
+                    "description": "Open the BigShorts app and tap the Your SSUP Button",
                     "image_path": "Shot/Group_1439.webp",
                    
                 },
                 {
                     "step": 2,
-                    "description": "Choose 'SSUP' from the Creation Wheel",
-                    "image_path": "Shot/Group_1440.webp",
-                   
-                },
-                {
-                    "step": 3,
                     "description": "Capture a video/image or upload an existing one from your Device",
                     "image_path": "Shot/Group_1441.webp",
                    
                 },
                 {
-                    "step": 4,
+                    "step": 3,
                     "description": "Edit your SSUP using BigShorts tools and tap done",
                     "image_path": "Shot/Group_1442.webp",
                     "tips": "Try our AI-powered filters and effects"
                     
                 },
                 {
-                    "step": 5,
+                    "step": 4,
                     "description": "Select your desired Duration, choose who can see your SSUP and Share",
                     "image_path": "Shot/Group_1443.webp",
                     "tips": "Choose who can see your SSUP"
@@ -777,12 +771,6 @@ def content_creation_guide(content_type: str) -> dict:
                     "description": "Find the Requested to Collaborate notification, then tap Accept — and you're done! 🎉",
                     "image_path": "Shot/Group_1458.webp",
                     "tips": "Clearly define each creator's role"
-                },
-                {
-                    "step": 6,
-                    "description": "You can see your colloborated post on scroll screen",
-                    "image_path": "Shot/Group_1459.webp",
-                    "tips": "Clearly define each creator's role"
                 }
             ],
         },
@@ -791,12 +779,12 @@ def content_creation_guide(content_type: str) -> dict:
             "steps": [
                 {
                     "step": 1,
-                    "description": "Apply desired filter and adjust brightness, apart from many effects lets explore image in image (Highlighted in red)",
+                    "description": "Apply desired filter and adjust brightness, apart from many effects lets explore image in image.",
                     "image_path": "Shot/Group_1475.webp",
                     "tips": "Try our AI-powered filters and effects"
                 },{
                     "step": 2,
-                    "description": "Choose filter of choice and select image (highlighted in red)",
+                    "description": "Choose filter of choice and select image",
                     "image_path": "Shot/Group_1476.webp",
                     
                 },{
@@ -811,13 +799,8 @@ def content_creation_guide(content_type: str) -> dict:
                     
                 },{
                     "step": 5,
-                    "description": "Place the image in image on screen as desiredand tap done",
+                    "description": "Place the image in image on screen as desired and tap done",
                     "image_path": "Shot/Group_1479.webp",
-                    
-                },{
-                    "step": 6,
-                    "description": "Tap done to save effect changes",
-                    "image_path": "Shot/Group_1480.webp",
                     
                 },{
                     "step": 7,
@@ -1222,7 +1205,7 @@ def content_creation_guide(content_type: str) -> dict:
                     
                 },
                 {
-                    "step": 4,
+                    "step": 5,
                     "description": "Then tap Update Post — done!",
                     "image_path": "Shot/Group_1519.webp",
                     
@@ -1326,24 +1309,18 @@ def content_creation_guide(content_type: str) -> dict:
             "steps": [
                 {
                     "step": 1,
-                    "description": "Tap scroll icon on the bottom navigation bar (Highlighted in red)",
-                    "image_path": "Shot/Group_1487.webp",
-                    "tips": "Make sure you're on the latest app version for all features"
-                },
-                {
-                    "step": 2,
-                    "description": "Then click search icon on top bar (Highlighted in red)",
+                    "description": "Click search icon on top bar in the Home Page (Highlighted in red)",
                     "image_path": "Shot/Group_1488.webp",
                     
                 },
                 {
-                    "step": 3,
-                    "description": "Here you can view famous hashtags accordingly on discovery tab on top, to search tap on search icon",
+                    "step": 2,
+                    "description": "Here you can discover trending content, to search tap on search icon",
                     "image_path": "Shot/Group_1489.webp",
                     
                 },
                 {
-                    "step": 4,
+                    "step": 3,
                     "description": "You can search users, hashtag in our search barr",
                     "image_path": "Shot/Group_1490.webp",
                     
@@ -1475,12 +1452,12 @@ def content_creation_guide(content_type: str) -> dict:
                     
                 },{
                     "step": 4,
-                    "description": "Pick a cover image for your Mini, add description, title, allow comment or who can watch the Mini",
+                    "description": "Edit Your Mini using BigShorts tools and tap done",
                     "image_path": "Shot/Group_1560.webp",
                     
                 },{
                     "step": 5,
-                    "description": "After filling the fields tap on post",
+                    "description": "Pick a cover image for your Mini, add description, title, allow comment or who can watch the Mini",
                     "image_path": "Shot/Group_1561.webp",
                     
                 },{
@@ -1508,42 +1485,36 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 3,
-                    "description": "Choose a image from gallery",
+                    "description": "Choose an image from gallery",
                     "image_path": "Shot/Group_1578.webp",
                     
                 },
                 {
                     "step": 4,
-                    "description": "Edit the cover image that you selected and then save",
-                    "image_path": "Shot/Group_1579.webp",
-                    
-                },
-                {
-                    "step": 5,
                     "description": "Add season title, description and eventually schedule time.",
                     "image_path": "Shot/Group_1580.webp",
                     
                 },
                 {
-                    "step": 6,
+                    "step": 5,
                     "description": "And then click on Create Mini Series (highlighted in red)",
                     "image_path": "Shot/Group_1581.webp",
                     
                 },
                 {
-                    "step": 7,
+                    "step": 6,
                     "description": "Select desired number of Mini that you want to add to Mini Series",
                     "image_path": "Shot/Group_1582.webp",
                     
                 },
                 {
-                    "step": 8,
+                    "step": 7,
                     "description": "And then tap on Add Episodes",
                     "image_path": "Shot/Group_1583.webp",
                     
                 },
                 {
-                    "step": 9,
+                    "step": 8,
                     "description": "Viola! your Mini Series is created!",
                     "image_path": "Shot/Group_1584.webp",
                     
@@ -1579,7 +1550,7 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 5,
-                    "description": "Tap on record to add your voice or any other sound",
+                    "description": "You Can Adjust Brightness Levels and Apply Filters as desired and then tap the Done Icon",
                     "image_path": "Shot/Group_1567.webp",
                     
                 },
@@ -1587,46 +1558,6 @@ def content_creation_guide(content_type: str) -> dict:
                     "step": 6,
                     "description": "Tap on Record button",
                     "image_path": "Shot/Group_1568.webp",
-                    
-                },{
-                    "step": 7,
-                    "description": "After recording click on tick mark",
-                    "image_path": "Shot/Group_1569.webp",
-                    
-                },
-                {
-                    "step": 8,
-                    "description": "You can also add sound effect on your recording",
-                    "image_path": "Shot/Group_1570.webp",
-                    
-                },
-                {
-                    "step": 9,
-                    "description": "Select a effect and apply",
-                    "image_path": "Shot/Group_1571.webp",
-                    
-                },{
-                    "step": 10,
-                    "description": "Then tap on tick",
-                    "image_path": "Shot/Group_1572.webp",
-                    
-                },
-                {
-                    "step": 11,
-                    "description": "Click on Time effect in effects board",
-                    "image_path": "Shot/Group_1573.webp",
-                    
-                },
-                {
-                    "step": 12,
-                    "description": "Tap and hold on desired time effect to apply, then tap on tick mark",
-                    "image_path": "Shot/Group_1574.webp",
-                    
-                },
-                {
-                    "step": 13,
-                    "description": "Click Next to save your effects, to proceed to posting",
-                    "image_path": "Shot/Group_1575.webp",
                     
                 }
             ]
@@ -1642,42 +1573,25 @@ def content_creation_guide(content_type: str) -> dict:
                 },
                 {
                     "step": 2,
-                    "description": "You can Rotate, split, trim, or delete clips and tap on tick mark to proceed to effects board",
+                    "description": "Let's Apply a Filter to the snip, click on Filters",
                     "image_path": "Shot/Group_1461.webp",
                     
                 },
                 {
                     "step": 3,
-                    "description": "Click on Blur amongst many effects which you can choose to edit",
+                    "description": "Choose the desired filter and click on tick mark to save",
                     "image_path": "Shot/Group_1462.webp",
                     
                 },
                 {
                     "step": 4,
-                    "description": "Select a desired shape of blur and apply blur effect",
+                    "description": "Click Done when you have finished editing",
                     "image_path": "Shot/Group_1463.webp",
                     
                 },{
                     "step": 5,
-                    "description": "Click on the next button to save effects.",
+                    "description": "Add Your caption and Click Post to share your Snip",
                     "image_path": "Shot/Group_1464.webp",
-                    
-                },{
-                    "step": 6,
-                    "description": "Here you pick cover image and tap done",
-                    "image_path": "Shot/Group_1465.webp",
-                   
-                },
-                {
-                    "step": 7,
-                    "description": "Click on Done to save changes",
-                    "image_path": "Shot/Group_1466.webp",
-                    
-                },
-                {
-                    "step": 8,
-                    "description": "Add captions, hashtags, and description Or Collab with your Friends and post",
-                    "image_path": "Shot/Group_1467.webp",
                     
                 }
             ]
@@ -1745,7 +1659,7 @@ def content_creation_guide(content_type: str) -> dict:
                     
                 },
                 {
-                    "step": 6,
+                    "step": 7,
                     "description": "Your series  is edited!",
                     "image_path": "Shot/Group_1591.webp",
                     
