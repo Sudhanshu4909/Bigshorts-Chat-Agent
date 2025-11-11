@@ -1463,7 +1463,7 @@ def content_creation_guide(content_type: str) -> dict:
                 },{
                     "step": 6,
                     "description": "After it, tap on Post and you're done!",
-                    "image_path": "Shot/Group_1562.webp",
+                    "image_path": "Shot/Group_1584.webp",
                     
                 }
             ]
