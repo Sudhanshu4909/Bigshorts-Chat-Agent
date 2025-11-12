@@ -2251,8 +2251,6 @@ class BigShortsChatbot:
     def process_query(self, user_input: str) -> Union[str, dict]:
         """Process user queries and return response with optional visual guide"""
         # Add user message to conversation history
-
-        session_id = "default"
         
         if session_id is None:
             session_id = "default"
@@ -2266,9 +2264,7 @@ class BigShortsChatbot:
     
         greetings = [
         "hello", "hi", "hey", "greetings", "howdy", "wassup", "whats up", "yo", 
-        "sup", "hiya", "heya", "hola", "bonjour", "ciao", "g'day", "good morning", 
-        "good afternoon", "good evening", "good day", "evening", "morning", 
-        "afternoon", "hello there", "hi there", "hey there", "what's happening", 
+        "sup", "hiya", "heya", "hola", "bonjour", "ciao", "g'day", "good day", "hello there", "hi there", "hey there", "what's happening", 
         "what's good", "how are you", "how's it going", "how are things", 
         "how's everything", "what's new", "what's up", "sup", "yo yo", "aloha"
         ]
@@ -2288,18 +2284,15 @@ class BigShortsChatbot:
                 "Yo! 🎤 Ready to make some fire content on BigShorts? I'm here to help!",
                 "Hiya! 🎉 BigShorts creators are killing it today! Want to join them?",
                 "G'day! 🌞 Let's make your BigShorts profile stand out with some amazing content!",
-                "Good morning! ☀️ Start your day with some fresh BigShorts content creation!",
-                "Good afternoon! 🌤 Perfect time to create some BigShorts content that will trend tonight!",
-                "Good evening! 🌙 Night time is prime time for BigShorts engagement. Need help creating content?",
                 "Howdy! 🤠 Your BigShorts creative partner is here to assist with any content needs!",
-                "Bonjour! 🇫🇷 BigShorts is going global, and I'm here to help you create content that connects!",
+                "Bonjour! BigShorts is going global, and I'm here to help you create content that connects!",
                 "Aloha! 🌺 Bring some sunshine to BigShorts with your next SHOT, SNIP, SSUP, or MINI!",
                 "Heya! 🎨 The BigShorts algorithm loves fresh content. What would you like to create today?",
                 "Sup! 🏆 BigShorts is all about authentic content. Need help making yours stand out?",
                 "How's it going? 💡 Ready to explore some creative ideas for your next BigShorts post?",
                 "What's happening! 🚀 BigShorts is buzzing today. Let's get your content in the mix!",
                 "How are you? 💬 However you're feeling, expressing it through BigShorts content can connect with others!",
-                "Ciao! 🇮🇹 Style and substance make the best BigShorts content. Need help with either?",
+                "Ciao!  Style and substance make the best BigShorts content. Need help with either?",
                 "What's good! 🏅 The best BigShorts creators post consistently. Ready to plan your next content piece?",
                 "Hi there! 🎭 Discover what's trending on BigShorts or create something completely new!",
                 "Hey hey! 🎬 Your BigShorts assistant Gyan.Ai is ready to help with SHOT photos, SNIP videos, SSUP stories, or MINI!",

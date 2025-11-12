@@ -14,14 +14,14 @@ from datetime import datetime, timedelta
 
 app = FastAPI(title="Bigshorts Chatbot API")
 
-# Enable CORS for all domains on all routes
+# Enable CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
         "http://bigshortsbot-fba2hdbpajcfa9d4.centralindia-01.azurewebsites.net",
         "http://20.197.5.250",
-        "http://52.140.106.225" # Be cautious with this in production
+        "http://52.140.106.225"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -36,17 +36,26 @@ if not os.path.exists(MODEL_PATH):
     print(f"WARNING: Model not found at {MODEL_PATH}")
     print("The API will start but chatbot functionality won't work until the model is available")
 
-# Dictionary to store chatbot instances for each session
-chatbot_instances = {}
+# CRITICAL FIX: Use a single shared chatbot instance
+chatbot_instance = None
 chatbot_lock = threading.Lock()
 
-# Last access time for each session
+def get_chatbot():
+    """Get the shared chatbot instance (lazy loading)"""
+    global chatbot_instance
+    
+    if chatbot_instance is None:
+        with chatbot_lock:
+            # Double-check after acquiring lock
+            if chatbot_instance is None:
+                print("Initializing shared chatbot instance...")
+                chatbot_instance = BigShortsChatbot(MODEL_PATH)
+                print("Chatbot initialized successfully!")
+    
+    return chatbot_instance
+
+# Session management for conversation history only
 last_access = {}
-
-# Max number of chatbot instances to keep in memory
-MAX_CHATBOTS = 100
-
-# Session timeout in minutes
 SESSION_TIMEOUT = 30
 
 # Request model
@@ -59,7 +68,6 @@ class FAQSelectRequest(BaseModel):
     content_type: str
     session_id: Optional[str] = None
 
-# Simplified response model without validation
 @app.post("/api/chat")
 async def chat(request: ChatRequest):
     """API endpoint to process chat messages"""
@@ -70,18 +78,18 @@ async def chat(request: ChatRequest):
         # Use provided session ID or generate a new one
         session_id = request.session_id or str(uuid.uuid4())
         
-        # Clean up old sessions occasionally
-        clean_old_sessions()
-        
-        # Get or create chatbot for this session
-        chatbot = get_session_chatbot(session_id)
+        # Get the shared chatbot instance
+        chatbot = get_chatbot()
         if chatbot is None:
             return {"type": "error", "content": "Failed to initialize chatbot", "session_id": session_id}
         
         try:
-            # Process the request
+            # Process the request with session_id
             print(f"Processing query for session {session_id}: {request.content}")
-            response = chatbot.process_query(request.content)
+            
+            # IMPORTANT: Pass session_id to process_query
+            # You'll need to modify process_query to accept session_id parameter
+            response = chatbot.process_query(request.content, session_id=session_id)
             print(f"Raw chatbot response: {type(response)} - {response}")
             
             # Update last access time
@@ -126,8 +134,8 @@ async def select_faq(request: FAQSelectRequest):
         # Use provided session ID or generate a new one
         session_id = request.session_id or str(uuid.uuid4())
         
-        # Get or create chatbot for this session
-        chatbot = get_session_chatbot(session_id)
+        # Get the shared chatbot instance
+        chatbot = get_chatbot()
         if chatbot is None:
             return {"type": "error", "content": "Failed to initialize chatbot", "session_id": session_id}
         
@@ -135,7 +143,7 @@ async def select_faq(request: FAQSelectRequest):
         formatted_request = f"FAQ: {request.content_type}"
         
         # Process the request
-        response = chatbot.process_query(formatted_request)
+        response = chatbot.process_query(formatted_request, session_id=session_id)
         
         # Update last access time
         with chatbot_lock:
@@ -154,60 +162,44 @@ async def select_faq(request: FAQSelectRequest):
         traceback.print_exc()
         return {"type": "error", "content": f"Error processing FAQ selection: {str(e)}", "session_id": request.session_id or str(uuid.uuid4())}
 
-def get_session_chatbot(session_id):
-    """Get or create a chatbot instance for a session"""
-    with chatbot_lock:
-        # If chatbot already exists for this session, return it
-        if session_id in chatbot_instances:
-            return chatbot_instances[session_id]
-        
-        # If we have too many chatbots, remove the oldest one
-        if len(chatbot_instances) >= MAX_CHATBOTS:
-            oldest_session = min(last_access.items(), key=lambda x: x[1])[0]
-            if oldest_session in chatbot_instances:
-                del chatbot_instances[oldest_session]
-                del last_access[oldest_session]
-        
-        # Create a new chatbot for this session
-        try:
-            chatbot = BigShortsChatbot(MODEL_PATH)
-            chatbot_instances[session_id] = chatbot
-            last_access[session_id] = datetime.now()
-            return chatbot
-        except Exception as e:
-            print(f"Failed to initialize chatbot for session {session_id}: {str(e)}")
-            traceback.print_exc()
-            return None
-
 def clean_old_sessions():
-    """Remove chatbot instances for sessions that haven't been accessed in a while"""
+    """Remove conversation history for sessions that haven't been accessed in a while"""
+    chatbot = get_chatbot()
+    if chatbot is None:
+        return
+        
     with chatbot_lock:
         current_time = datetime.now()
         sessions_to_remove = []
         
-        for session_id, access_time in last_access.items():
+        for session_id, access_time in list(last_access.items()):
             if current_time - access_time > timedelta(minutes=SESSION_TIMEOUT):
                 sessions_to_remove.append(session_id)
         
         for session_id in sessions_to_remove:
-            if session_id in chatbot_instances:
-                del chatbot_instances[session_id]
+            # Remove conversation history from chatbot
+            if session_id in chatbot.sessions:
+                del chatbot.sessions[session_id]
+            if session_id in last_access:
                 del last_access[session_id]
-                print(f"Removed inactive session: {session_id}")
+            print(f"Removed inactive session: {session_id}")
 
 @app.get("/api/health")
 async def health_check():
     """Health check endpoint"""
     model_loaded = os.path.exists(MODEL_PATH)
+    chatbot = get_chatbot() if model_loaded else None
     return {
         "status": "ok", 
-        "model_loaded": model_loaded, 
-        "active_sessions": len(chatbot_instances)
+        "model_loaded": model_loaded,
+        "chatbot_initialized": chatbot is not None,
+        "active_sessions": len(last_access)
     }
 
 @app.get("/api/sessions")
 async def get_sessions():
     """Get information about active sessions"""
+    chatbot = get_chatbot()
     with chatbot_lock:
         sessions = []
         for session_id, access_time in last_access.items():
@@ -217,17 +209,25 @@ async def get_sessions():
                 "idle_minutes": round(idle_time, 2)
             })
         
-        return {"active_sessions": len(chatbot_instances), "sessions": sessions}
+        return {
+            "active_sessions": len(last_access),
+            "sessions": sessions,
+            "total_conversation_sessions": len(chatbot.sessions) if chatbot else 0
+        }
 
 @app.post("/api/clear-session")
 async def clear_session(session_id: str):
-    """Clear a specific session"""
+    """Clear a specific session's conversation history"""
+    chatbot = get_chatbot()
+    if chatbot is None:
+        return {"status": "error", "message": "Chatbot not initialized"}
+        
     with chatbot_lock:
-        if session_id in chatbot_instances:
-            del chatbot_instances[session_id]
-            if session_id in last_access:
-                del last_access[session_id]
-            return {"status": "success", "message": "Session cleared"}
+        if session_id in chatbot.sessions:
+            del chatbot.sessions[session_id]
+        if session_id in last_access:
+            del last_access[session_id]
+        return {"status": "success", "message": "Session cleared"}
     
     return {"status": "warning", "message": "Session not found"}
 
