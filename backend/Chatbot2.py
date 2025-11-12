@@ -658,7 +658,7 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 3,
                     "description": "Capture a SHOT or upload an existing photo from your Device",
-                    "image_path": "Shot/Group_1451.webp",
+                    "image_path": "Shot/Group_1523.webp",
                     "tips": "SHOT can include multiple Pictures"
                     
                 },
@@ -688,7 +688,7 @@ def content_creation_guide(content_type: str) -> dict:
                 {
                     "step": 2,
                     "description": "Capture a video/image or upload an existing one from your Device",
-                    "image_path": "Shot/Group_1441.webp",
+                    "image_path": "Shot/Group_1523.webp",
                    
                 },
                 {
