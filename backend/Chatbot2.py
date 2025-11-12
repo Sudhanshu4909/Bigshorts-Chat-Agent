@@ -2248,9 +2248,9 @@ class BigShortsChatbot:
             return f"I encountered a technical issue. Can I help you with creating content on BigShorts instead?"
             
     
-    def process_query(self, user_input: str) -> Union[str, dict]:
+    def process_query(self, user_input: str, session_id: str = None) -> Union[str, dict]:
         """Process user queries and return response with optional visual guide"""
-        # Add user message to conversation history
+        # Handle session_id
         
         if session_id is None:
             session_id = "default"
