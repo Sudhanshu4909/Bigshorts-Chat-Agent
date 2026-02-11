@@ -1,0 +1,18 @@
+# Requirements for BigShorts LangChain Agent
+
+# Core LangChain
+langchain>=0.1.0
+langchain-community>=0.0.20
+
+# LLM Backend
+llama-cpp-python>=0.2.0
+
+# Utilities
+pydantic>=2.0.0
+pyyaml>=6.0
+
+# Optional: For enhanced features
+# openai  # If you want to use OpenAI models instead
+# anthropic  # If you want to use Claude API
+# chromadb  # For vector storage and RAG
+# faiss-cpu  # Alternative vector store
